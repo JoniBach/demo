@@ -8,7 +8,7 @@ export default [
         items: convert
     },
     {
-        title: 'transform',
+        title: 'Transform',
         id: 'transform',
         items: transform
 

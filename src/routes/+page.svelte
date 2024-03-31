@@ -1,5 +1,6 @@
 <script>
 	import Headder from '$lib/components/page/Headder.svelte';
+	import projects from '$lib/config/projects';
 </script>
 
 <Headder title="@jonibach demos">
@@ -7,8 +8,9 @@
 </Headder>
 
 <div>
-	<ul>
-		<li><a href="/convert">convert</a></li>
-		<li><a href="/format">format</a></li>
-	</ul>
+	{#each projects as group}
+		<a href={group.id}>
+			<Headder title={group.title} level={2} />
+		</a>
+	{/each}
 </div>
