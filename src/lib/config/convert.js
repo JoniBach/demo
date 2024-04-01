@@ -76,227 +76,283 @@ export default [
         title: 'SI Units',
         items: [
             {
-                title: 'inchesToMeters',
-                testFunction: inchesToMeters,
-                defaultValue: 1,
-                from: 'inches',
-                to: 'meters',
+                title: 'inchesToMeters', //
+                demo: 'convert', //
+                type: { from: 'number', to: 'number' }, //
+                testFunction: inchesToMeters, //
+                params: [1],
+                inputLabel: 'inches',
+                outputLabel: 'meters',
                 description: 'Converts inches to meters.'
             },
             {
                 title: 'metersToInches',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: metersToInches,
-                defaultValue: 1,
-                from: 'meters',
-                to: 'inches',
+                params: [1],
+                inputLabel: 'meters',
+                outputLabel: 'inches',
                 description: 'Converts meters to inches.'
             },
             {
                 title: 'feetToMeters',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: feetToMeters,
-                defaultValue: 1,
-                from: 'feet',
-                to: 'meters',
+                params: [1],
+                inputLabel: 'feet',
+                outputLabel: 'meters',
                 description: 'Converts feet to meters.'
             },
             {
                 title: 'metersToFeet',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: metersToFeet,
-                defaultValue: 1,
-                from: 'meters',
-                to: 'feet',
+                params: [1],
+                inputLabel: 'meters',
+                outputLabel: 'feet',
                 description: 'Converts meters to feet.'
             },
             {
                 title: 'milesToMeters',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: milesToMeters,
-                defaultValue: 1,
-                from: 'miles',
-                to: 'meters',
+                params: [1],
+                inputLabel: 'miles',
+                outputLabel: 'meters',
                 description: 'Converts miles to meters.'
             },
             {
                 title: 'metersToMiles',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: metersToMiles,
-                defaultValue: 1,
-                from: 'meters',
-                to: 'miles',
+                params: [1],
+                inputLabel: 'meters',
+                outputLabel: 'miles',
                 description: 'Converts meters to miles.'
             },
             {
                 title: 'poundsToKilograms',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: poundsToKilograms,
-                defaultValue: 1,
-                from: 'pounds',
-                to: 'kilograms',
+                params: [1],
+                inputLabel: 'pounds',
+                outputLabel: 'kilograms',
                 description: 'Converts pounds to kilograms.'
             },
             {
                 title: 'kilogramsToPounds',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: kilogramsToPounds,
-                defaultValue: 1,
-                from: 'kilograms',
-                to: 'pounds',
+                params: [1],
+                inputLabel: 'kilograms',
+                outputLabel: 'pounds',
                 description: 'Converts kilograms to pounds.'
             },
             {
                 title: 'ouncesToKilograms',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: ouncesToKilograms,
-                defaultValue: 1,
-                from: 'ounces',
-                to: 'kilograms',
+                params: [1],
+                inputLabel: 'ounces',
+                outputLabel: 'kilograms',
                 description: 'Converts ounces to kilograms.'
             },
             {
                 title: 'kilogramsToOunces',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: kilogramsToOunces,
-                defaultValue: 1,
-                from: 'kilograms',
-                to: 'ounces',
+                params: [1],
+                inputLabel: 'kilograms',
+                outputLabel: 'ounces',
                 description: 'Converts kilograms to ounces.'
             },
             {
                 title: 'gallonsToLiters',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: gallonsToLiters,
-                defaultValue: 1,
-                from: 'gallons (US)',
-                to: 'liters',
+                params: [1],
+                inputLabel: 'gallons (US)',
+                outputLabel: 'liters',
                 description: 'Converts US gallons to liters.'
             },
             {
                 title: 'litersToGallons',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: litersToGallons,
-                defaultValue: 1,
-                from: 'liters',
-                to: 'gallons',
+                params: [1],
+                inputLabel: 'liters',
+                outputLabel: 'gallons',
                 description: 'Converts liters to US gallons.'
             },
             {
                 title: 'cubicFeetToLiters',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: cubicFeetToLiters,
-                defaultValue: 1,
-                from: 'cubicFeet',
-                to: 'liters',
+                params: [1],
+                inputLabel: 'cubicFeet',
+                outputLabel: 'liters',
                 description: 'Converts cubic feet to liters.'
             },
             {
                 title: 'litersToCubicFeet',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: litersToCubicFeet,
-                defaultValue: 1,
-                from: 'liters',
-                to: 'cubicFeet',
+                params: [1],
+                inputLabel: 'liters',
+                outputLabel: 'cubicFeet',
                 description: 'Converts liters to cubic feet.'
             },
             {
                 title: 'fahrenheitToKelvin',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: fahrenheitToKelvin,
-                defaultValue: 32,
-                from: 'fahrenheit',
-                to: 'kelvin',
+                params: [32],
+                inputLabel: 'fahrenheit',
+                outputLabel: 'kelvin',
                 description: 'Converts Fahrenheit to Kelvin.'
             },
             {
                 title: 'kelvinToFahrenheit',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: kelvinToFahrenheit,
-                defaultValue: 273.15,
-                from: 'kelvin',
-                to: 'fahrenheit',
+                params: [273.15],
+                inputLabel: 'kelvin',
+                outputLabel: 'fahrenheit',
                 description: 'Converts Kelvin to Fahrenheit.'
             },
             {
                 title: 'celsiusToKelvin',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: celsiusToKelvin,
-                defaultValue: 0,
-                from: 'celsius',
-                to: 'kelvin',
+                params: [0],
+                inputLabel: 'celsius',
+                outputLabel: 'kelvin',
                 description: 'Converts Celsius to Kelvin.'
             },
             {
                 title: 'kelvinToCelsius',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: kelvinToCelsius,
-                defaultValue: 273.15,
-                from: 'kelvin',
-                to: 'celsius',
+                params: [273.15],
+                inputLabel: 'kelvin',
+                outputLabel: 'celsius',
                 description: 'Converts Kelvin to Celsius.'
             },
             {
                 title: 'caloriesToJoules',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: caloriesToJoules,
-                defaultValue: 1,
-                from: 'calories',
-                to: 'joules',
+                params: [1],
+                inputLabel: 'calories',
+                outputLabel: 'joules',
                 description: 'Converts calories to joules.'
             },
             {
                 title: 'joulesToCalories',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: joulesToCalories,
-                defaultValue: 1,
-                from: 'joules',
-                to: 'calories',
+                params: [1],
+                inputLabel: 'joules',
+                outputLabel: 'calories',
                 description: 'Converts joules to calories.'
             },
             {
                 title: 'btusToJoules',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: btusToJoules,
-                defaultValue: 1,
-                from: 'btu',
-                to: 'joules',
+                params: [1],
+                inputLabel: 'btu',
+                outputLabel: 'joules',
                 description: 'Converts BTUs to joules.'
             },
             {
                 title: 'joulesToBtus',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: joulesToBtus,
-                defaultValue: 1,
-                from: 'joules',
-                to: 'btu',
+                params: [1],
+                inputLabel: 'joules',
+                outputLabel: 'btu',
                 description: 'Converts joules to BTUs.'
             },
             {
                 title: 'psiToPascals',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: psiToPascals,
-                defaultValue: 1,
-                from: 'psi',
-                to: 'pascals',
+                params: [1],
+                inputLabel: 'psi',
+                outputLabel: 'pascals',
                 description: 'Converts PSI to Pascals.'
             },
             {
                 title: 'pascalsToPsi',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: pascalsToPsi,
-                defaultValue: 1,
-                from: 'pascals',
-                to: 'psi',
+                params: [1],
+                inputLabel: 'pascals',
+                outputLabel: 'psi',
                 description: 'Converts Pascals to PSI.'
             },
             {
                 title: 'atmospheresToPascals',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: atmospheresToPascals,
-                defaultValue: 1,
-                from: 'atmospheres',
-                to: 'pascals',
+                params: [1],
+                inputLabel: 'atmospheres',
+                outputLabel: 'pascals',
                 description: 'Converts atmospheres to Pascals.'
             },
             {
                 title: 'pascalsToAtmospheres',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: pascalsToAtmospheres,
-                defaultValue: 1,
-                from: 'pascals',
-                to: 'atmospheres',
+                params: [1],
+                inputLabel: 'pascals',
+                outputLabel: 'atmospheres',
                 description: 'Converts Pascals to atmospheres.'
             },
             {
                 title: 'horsepowerToWatts',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: horsepowerToWatts,
-                defaultValue: 1,
-                from: 'horsepower',
-                to: 'watts',
+                params: [1],
+                inputLabel: 'horsepower',
+                outputLabel: 'watts',
                 description: 'Converts horsepower to watts.'
             },
             {
                 title: 'wattsToHorsepower',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: wattsToHorsepower,
-                defaultValue: 1,
-                from: 'watts',
-                to: 'horsepower',
+                params: [1],
+                inputLabel: 'watts',
+                outputLabel: 'horsepower',
                 description: 'Converts watts to horsepower.'
             }
         ]
@@ -307,96 +363,108 @@ export default [
             {
                 title: 'urlToEncode',
                 description: 'Converts a URL string to an encoded URL string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: urlToEncode,
-                defaultValue: 'https://example.com/?search=query',
-                from: 'urlString',
-                to: 'encodedUrltring'
+                params: ['https://example.com/?search=query'],
+                inputLabel: 'urlString',
+                outputLabel: 'encodedUrltring'
             },
             {
                 title: 'urlToDecode',
                 description: 'Converts an encoded URL string to a URL string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: urlToDecode,
-                defaultValue: 'https%3A%2F%2Fexample.com%2F%3Fsearch%3Dquery',
-                from: 'encodedUrltring',
-                to: 'URL string'
+                params: ['https%3A%2F%2Fexample.com%2F%3Fsearch%3Dquery'],
+                inputLabel: 'encodedUrltring',
+                outputLabel: 'URL string'
             },
 
             {
                 title: 'stringToHex',
                 description: 'Converts a string to a hexadecimal string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: stringToHex,
-                defaultValue: 'example',
-                from: 'string',
-                to: 'hexadecimal'
+                params: ['example'],
+                inputLabel: 'string',
+                outputLabel: 'hexadecimal'
             },
             {
                 title: 'hexToString',
                 description: 'Converts a hexadecimal string to a string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: hexToString,
-                defaultValue: '6578616d706c65',
-                from: 'hexadecimal',
-                to: 'string'
+                params: ['6578616d706c65'],
+                inputLabel: 'hexadecimal',
+                outputLabel: 'string'
             },
             {
                 title: 'stringToBinary',
                 description: 'Converts a string to a binary string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: stringToBinary,
-                defaultValue: 'example',
-                from: 'string',
-                to: 'binary'
+                params: ['example'],
+                inputLabel: 'string',
+                outputLabel: 'binary'
             },
             {
                 title: 'binaryToString',
                 description: 'Converts a binary string to a string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: binaryToString,
-                defaultValue: '01100101 01111000 01100001 01101101 01110000 01101100 01100101',
-                from: 'binary',
-                to: 'string'
+                params: ['01100101 01111000 01100001 01101101 01110000 01101100 01100101'],
+                inputLabel: 'binary',
+                outputLabel: 'string'
             },
             {
                 title: 'webStringToBase64',
                 description: 'Converts a string to a base64 string using the Web API.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: webStringToBase64,
-                defaultValue: 'example string',
-                from: 'string',
-                to: 'base64'
+                params: ['example string'],
+                inputLabel: 'string',
+                outputLabel: 'base64'
             },
             {
                 title: 'webBase64ToString',
                 description: 'Converts a base64 string to a string using the Web API.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: webBase64ToString,
-                defaultValue: 'ZXhhbXBsZSBzdHJpbmc=',
-                from: 'base64',
-                to: 'string'
+                params: ['ZXhhbXBsZSBzdHJpbmc='],
+                inputLabel: 'base64',
+                outputLabel: 'string'
             }
         ]
 
         // {
         //     title: 'nodeStringToBase64',
         //     function:nodeStringToBase64,
-        //     defaultValue: 'example string',
-        //     from: 'string',
+        //     params: ['example string'], //     from: 'string',
         //     to: 'Base64 (Node.js)'
         // },
         // {
         //     title: 'nodeBase64ToString',
         //     function:nodeBase64ToString,
-        //     defaultValue: 'ZXhhbXBsZSBzdHJpbmc=',
-        //     from: 'Base64 (Node.js)',
+        //     params: ['ZXhhbXBsZSBzdHJpbmc='], //     from: 'Base64 (Node.js)',
         //     to: 'string'
         // },
         // {
         //     title: 'stringToArrayBuffer',
         //     function:stringToArrayBuffer,
-        //     defaultValue: 'example',
-        //     from: 'string',
+        //     params: ['example'], //     from: 'string',
         //     to: 'ArrayBuffer'
         // },
         // {
         //     title: 'arrayBufferToString',
         //     function:arrayBufferToString,
-        //     defaultValue: '', // Default value would be an ArrayBuffer, which is tricky to represent here
-        //     from: 'ArrayBuffer',
+        //     params: ['', // Default value would be an ArrayBuffer, which is tricky to represent here], //     from: 'ArrayBuffer',
         //     to: 'string'
         // },
     },
@@ -406,66 +474,82 @@ export default [
             {
                 title: 'binaryToDecimal',
                 description: 'Converts a binary string to a decimal number.',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: binaryToDecimal,
-                defaultValue: '1010', // Example binary string
-                from: 'binaryString',
-                to: 'decimalNumber'
+                params: ['1010'],
+                inputLabel: 'binaryString',
+                outputLabel: 'decimalNumber'
             },
             {
                 title: 'decimalToBinary',
                 description: 'Converts a decimal number to a binary string.',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: decimalToBinary,
-                defaultValue: 10, // Example decimal number
-                from: 'decimalNumber',
-                to: 'binaryString'
+                params: [10],
+                inputLabel: 'decimalNumber',
+                outputLabel: 'binaryString'
             },
             {
                 title: 'hexadecimalToDecimal',
                 description: 'Converts a hexadecimal string to a decimal number.',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: hexadecimalToDecimal,
-                defaultValue: 'A', // Example hexadecimal string
-                from: 'hexadecimalString',
-                to: 'decimalNumber'
+                params: ['A'],
+                inputLabel: 'hexadecimalString',
+                outputLabel: 'decimalNumber'
             },
             {
                 title: 'decimalToHexadecimal',
                 description: 'Converts a decimal number to a hexadecimal string.',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: decimalToHexadecimal,
-                defaultValue: 10, // Example decimal number
-                from: 'decimalNumber',
-                to: 'hexadecimalString'
+                params: [10],
+                inputLabel: 'decimalNumber',
+                outputLabel: 'hexadecimalString'
             },
             {
                 title: 'binaryToHexadecimal',
                 description: 'Converts a binary string to a hexadecimal string.',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: binaryToHexadecimal,
-                defaultValue: '1010', // Example binary string
-                from: 'binaryString',
-                to: 'hexadecimalString'
+                params: ['1010'],
+                inputLabel: 'binaryString',
+                outputLabel: 'hexadecimalString'
             },
             {
                 title: 'hexadecimalToBinary',
                 description: 'Converts a hexadecimal string to a binary string.',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: hexadecimalToBinary,
-                defaultValue: 'A', // Example hexadecimal string
-                from: 'hexadecimalString',
-                to: 'binaryString'
+                params: ['A'],
+                inputLabel: 'hexadecimalString',
+                outputLabel: 'binaryString'
             },
             {
                 title: 'decimalToOctal',
                 description: 'Converts a decimal number to an octal string.',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: decimalToOctal,
-                defaultValue: 10, // Example decimal number
-                from: 'decimal number',
-                to: 'octalString'
+                params: [10],
+                inputLabel: 'decimal number',
+                outputLabel: 'octalString'
             },
             {
                 title: 'octalToDecimal',
                 description: 'Converts an octal string to a decimal number.',
+                demo: 'convert',
+                type: { from: 'number', to: 'number' },
                 testFunction: octalToDecimal,
-                defaultValue: '12', // Example octalString
-                from: 'octalString',
-                to: 'decimalNumber'
+                params: ['12'],
+                inputLabel: 'octalString',
+                outputLabel: 'decimalNumber'
             }
         ]
     },
@@ -476,77 +560,92 @@ export default [
                 readOnly: true,
                 description: 'Converts a date object to a Unix timestamp.',
                 title: 'dateToTimestamp',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: dateToTimestamp,
-                defaultValue: new Date(), // Current date and time
-                from: 'dateObject',
-                to: 'unixTimestamp'
+                params: [new Date()],
+                inputLabel: 'dateObject',
+                outputLabel: 'unixTimestamp'
             },
             {
                 readOnly: true,
                 title: 'timestampToDate',
 
                 description: 'Converts a Unix timestamp to a date object.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: timestampToDate,
-                defaultValue: Date.now(), // Current unixTimestamp
-                from: 'unixTimestamp',
-                to: 'dateObject'
+                params: [Date.now()],
+                inputLabel: 'unixTimestamp',
+                outputLabel: 'dateObject'
             },
             {
                 readOnly: true,
                 title: 'dateToISOString',
 
                 description: 'Converts a date object to an ISO 8601 string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: dateToISOString,
-                defaultValue: new Date(), // Current date and time
-                from: 'dateObject',
-                to: 'iso8601string'
+                params: [new Date()],
+                inputLabel: 'dateObject',
+                outputLabel: 'iso8601string'
             },
             {
                 readOnly: true,
                 title: 'isoStringToDate',
                 description: 'Converts an ISO 8601 string to a date object.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: isoStringToDate,
-                defaultValue: new Date().toISOString(), // Current date and time in ISO 8601 format
-                from: 'iso8601string',
-                to: 'dateObject'
+                params: [new Date().toISOString()],
+                inputLabel: 'iso8601string',
+                outputLabel: 'dateObject'
             },
             {
                 readOnly: true,
                 title: 'timestampToISOString',
                 description: 'Converts a Unix timestamp to an ISO 8601 string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: timestampToISOString,
-                defaultValue: Date.now(), // Current unixTimestamp
-                from: 'unixTimestamp',
-                to: 'iso8601string'
+                params: [Date.now()],
+                inputLabel: 'unixTimestamp',
+                outputLabel: 'iso8601string'
             },
             {
                 readOnly: true,
                 title: 'isoStringToTimestamp',
                 description: 'Converts an ISO 8601 string to a Unix timestamp.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: isoStringToTimestamp,
-                defaultValue: new Date().toISOString(), // Current date and time in ISO 8601 format
-                from: 'iso8601string',
-                to: 'unixTimestamp'
+                params: [new Date().toISOString()],
+                inputLabel: 'iso8601string',
+                outputLabel: 'unixTimestamp'
             },
             {
                 readOnly: true,
                 title: 'dateToLocalString',
                 description: 'Converts a date object to a localized date and time string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: dateToLocalString,
-                defaultValue: new Date(), // Current date and time
-                additionalParams: 'locale: string, options?: Intl.DateTimeFormatOptions',
-                from: 'dateObject',
-                to: 'localizedStringRepresentation'
+                params: [new Date(), 'locale: string, options?: Intl.DateTimeFormatOptions'],
+                inputLabel: 'dateObject',
+                outputLabel: 'localizedStringRepresentation'
             },
             {
                 readOnly: true,
                 title: 'dateToDayOfWeek',
                 description: 'Converts a date object to the day of the week.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: dateToDayOfWeek,
-                defaultValue: new Date(), // Current date and time
-                additionalParams: 'locale: string = "en-US"',
-                from: 'dateObject',
-                to: 'dayOfTheWeek'
+                params: [new Date(), 'locale: string = "en-US"'],
+
+                inputLabel: 'dateObject',
+                outputLabel: 'dayOfTheWeek'
             }
         ]
     },
@@ -556,79 +655,91 @@ export default [
             // {
             //     title: 'rgbToHex',
             //     function:rgbToHex,
-            //     defaultValue: { r: 255, g: 255, b: 255 }, // White color
-            //     from: 'RGB',
+            //     params: [{ r: 255, g: 255, b: 255 }, // White color], //     from: 'RGB',
             //     to: 'Hex'
             // },
             // {
             //     title: 'hexToRgb',
             //     function:hexToRgb,
-            //     defaultValue: '#ffffff', // White color
-            //     from: 'Hex',
+            //     params: ['#ffffff', // White color], //     from: 'Hex',
             //     to: 'RGB'
             // },
             {
                 readOnly: true,
                 title: 'rgbToHsl',
                 description: 'Converts an RGB color to an HSL color.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: rgbToHsl,
-                defaultValue: { r: 255, g: 255, b: 255 }, // White color
-                from: 'RGB',
-                to: 'HSL'
+                params: [{ r: 255, g: 255, b: 255 }],
+                inputLabel: 'RGB',
+                outputLabel: 'HSL'
             },
             {
                 readOnly: true,
                 title: 'hslToRgb',
                 description: 'Converts an HSL color to an RGB color.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: hslToRgb,
-                defaultValue: { h: 0, s: 0, l: 100 }, // White color
-                from: 'HSL',
-                to: 'RGB'
+                params: [{ h: 0, s: 0, l: 100 }],
+                inputLabel: 'HSL',
+                outputLabel: 'RGB'
             },
             {
                 readOnly: true,
                 title: 'hexToHsl',
                 description: 'Converts a hex color to an HSL color.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: hexToHsl,
-                defaultValue: '#ffffff', // White color
-                from: 'Hex',
-                to: 'HSL'
+                params: ['#ffffff'],
+                inputLabel: 'Hex',
+                outputLabel: 'HSL'
             },
             {
                 readOnly: true,
                 title: 'hslToHex',
                 description: 'Converts an HSL color to a hex color.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: hslToHex,
-                defaultValue: { h: 0, s: 0, l: 100 }, // White color
-                from: 'HSL',
-                to: 'Hex'
+                params: [{ h: 0, s: 0, l: 100 }],
+                inputLabel: 'HSL',
+                outputLabel: 'Hex'
             },
             {
                 readOnly: true,
                 title: 'rgbaToString',
                 description: 'Converts an RGBA color to a CSS string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: rgbaToString,
-                defaultValue: { r: 255, g: 255, b: 255, a: 1 }, // White color with full opacity
-                from: 'RGBA',
-                to: 'CSSstring'
+                params: [{ r: 255, g: 255, b: 255, a: 1 }],
+                inputLabel: 'RGBA',
+                outputLabel: 'CSSstring'
             },
             {
                 readOnly: true,
                 title: 'hslaToString',
                 description: 'Converts an HSLA color to a CSS string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: hslaToString,
-                defaultValue: { h: 0, s: 0, l: 100, a: 1 }, // White color with full opacity
-                from: 'HSLA',
-                to: 'CSSstring'
+                params: [{ h: 0, s: 0, l: 100, a: 1 }],
+                inputLabel: 'HSLA',
+                outputLabel: 'CSSstring'
             },
             {
                 readOnly: true,
                 title: 'complementaryHsl',
                 description: 'Calculates the complementary HSL color.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: complementaryHsl,
-                defaultValue: { h: 0, s: 100, l: 50 }, // Red color
-                from: 'HSL',
-                to: 'ComplementaryHSL'
+                params: [{ h: 0, s: 100, l: 50 }],
+                inputLabel: 'HSL',
+                outputLabel: 'ComplementaryHSL'
             }
         ]
     },
@@ -640,84 +751,102 @@ export default [
                 readOnly: true,
                 title: 'jsonStringToObject',
                 description: 'Converts a JSON string to an object.',
+                demo: 'convert',
+                type: { from: 'string', to: 'object' },
                 testFunction: jsonStringToObject,
-                defaultValue: '{"name: "John", "age: 30}',
-                from: 'jsonString',
-                to: 'object'
+                params: ['{"name: "John", "age: 30}'],
+                inputLabel: 'jsonString',
+                outputLabel: 'object'
             },
             {
                 readOnly: true,
                 title: 'objectToJsonString',
                 description: 'Converts an object to a JSON string.',
+                demo: 'convert',
+                type: { from: 'object', to: 'string' },
                 testFunction: objectToJsonString,
-                defaultValue: { name: 'John', age: 30 },
-                from: 'object',
-                to: 'jsonString'
+                params: [{ name: 'John', age: 30 }],
+                inputLabel: 'object',
+                outputLabel: 'jsonString'
             },
             {
                 readOnly: true,
                 title: 'yamlToJson',
                 description: 'Converts a YAML string to a JSON object.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: yamlToJson,
-                defaultValue: 'name: John\nage: 30',
-                from: 'yamlString',
-                to: 'jsonObject'
+                params: ['name: John\nage: 30'],
+                inputLabel: 'yamlString',
+                outputLabel: 'jsonObject'
             },
             {
                 readOnly: true,
                 title: 'jsonToYaml',
                 description: 'Converts a JSON object to a YAML string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: jsonToYaml,
-                defaultValue: { name: 'John', age: 30 },
-                from: 'jsonObject',
-                to: 'yamlString'
+                params: [{ name: 'John', age: 30 }],
+                inputLabel: 'jsonObject',
+                outputLabel: 'yamlString'
             },
             {
                 readOnly: true,
                 title: 'csvToJson',
                 description: 'Converts a CSV string to a JSON object.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: csvToJson,
-                defaultValue: 'name,age\nJohn,30',
-                from: 'csvString',
-                to: 'jsonObject'
+                params: ['name,age\nJohn,30'],
+                inputLabel: 'csvString',
+                outputLabel: 'jsonObject'
             },
             {
                 readOnly: true,
                 title: 'jsonToCsv',
                 description: 'Converts a JSON object to a CSV string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: jsonToCsv,
-                defaultValue: [{ name: 'John', age: 30 }],
-                from: 'jsonObject',
-                to: 'csvString'
+                params: [[{ name: 'John', age: 30 }]],
+                inputLabel: 'jsonObject',
+                outputLabel: 'csvString'
             },
             {
                 readOnly: true,
                 title: 'xmlToJson',
 
                 description: 'Converts an XML string to a JSON object.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: xmlToJson,
-                defaultValue: '<person><name>John</name><age>30</age></person>',
-                from: 'XML string',
-                to: 'jsonObject',
+                params: ['<person><name>John</name><age>30</age></person>'],
+                inputLabel: 'XML string',
+                outputLabel: 'jsonObject',
                 isAsync: true // Indicate this operation is asynchronous
             },
             {
                 readOnly: true,
                 title: 'jsonToXml',
                 description: 'Converts a JSON object to an XML string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: jsonToXml,
-                defaultValue: { person: { name: 'John', age: 30 } },
-                from: 'jsonObject',
-                to: 'xmlString'
+                params: [{ person: { name: 'John', age: 30 } }],
+                inputLabel: 'jsonObject',
+                outputLabel: 'xmlString'
             },
             {
                 readOnly: true,
                 title: 'markdownToHtml',
                 description: 'Converts a markdown string to an HTML string.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: markdownToHtml,
-                defaultValue: '# Hello World',
-                from: 'Markdown text',
-                to: 'HTML',
+                params: ['# Hello World'],
+                inputLabel: 'Markdown text',
+                outputLabel: 'HTML',
                 isAsync: true // Indicate this operation is asynchronous
             },
             {
@@ -725,19 +854,23 @@ export default [
                 title: 'compressString',
 
                 description: 'Compresses a string using the DEFLATE algorithm.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: compressString,
-                defaultValue: 'Hello World',
-                from: 'string',
-                to: 'uint8Array'
+                params: ['Hello World'],
+                inputLabel: 'string',
+                outputLabel: 'uint8Array'
             },
             {
                 readOnly: true,
                 title: 'decompressToString',
                 description: 'Decompresses a Uint8Array to a string using the DEFLATE algorithm.',
+                demo: 'convert',
+                type: { from: 'string', to: 'string' },
                 testFunction: decompressToString,
-                defaultValue: new Uint8Array(), // Placeholder for demonstration
-                from: 'Uint8Array',
-                to: 'string'
+                params: [new Uint8Array()],
+                inputLabel: 'Uint8Array',
+                outputLabel: 'string'
             }
         ]
     }
