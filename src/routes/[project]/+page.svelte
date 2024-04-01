@@ -4,6 +4,7 @@
 	import Headder from '$lib/components/page/Headder.svelte';
 	import projects from '$lib/config/projects';
 	import ToolInfo from '$lib/components/ToolInfo.svelte';
+	import ConvertDemo from '$lib/components/demo/ConvertDemo.svelte';
 
 	$: project = $page.params.project;
 
@@ -19,6 +20,11 @@
 				<Headder title={item.title} level={3} />
 				<Content id={item.title}>
 					<ToolInfo {data} {item} />
+					{#if item?.demo === 'convert'}
+						<ConvertDemo {item} />
+					{:else if item?.demo === 'check'}
+						check demo
+					{/if}
 				</Content>
 			{/each}
 		{/if}
