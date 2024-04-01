@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { extractFunctionInfo, objectToJsonString } from '@jonibach/convert';
 	import { onMount } from 'svelte';
-	import ArrowIcon from '../icons/ArrowIcon.svelte';
 	import Inputs from './Inputs.svelte';
 	import Outputs from './Outputs.svelte';
 
@@ -15,15 +13,13 @@
 	$: inputLabel = item.inputLabel;
 	$: outputLabel = item.outputLabel;
 
-	$: inputValues = params;
+	$: inputValues = [];
 	$: outputValue =
-		!loading &&
-		testFunction &&
-		inputValues &&
-		testFunction(inputValues[0], inputValues[1], inputValues[2]);
+		!loading && testFunction && inputValues && testFunction(inputValues[0], params[1], params[2]);
 
 	onMount(() => {
 		testFunction = item?.testFunction;
+		inputValues = [item.params[0]];
 		loading = false;
 	});
 </script>
@@ -35,11 +31,17 @@
 		<div class="input-container">
 			Input ({inputLabel})
 			<Inputs bind:inputValues {type} />
+			{#if params.length > 1}
+				<Outputs outputValue={params[1]} {type} />
+			{/if}
+			{#if params.length > 2}
+				<Outputs outputValue={params[2]} {type} />
+			{/if}
 		</div>
 
 		<div class="output-container">
 			Output ({outputLabel})
-			<Outputs {outputValue} {type} />
+			{outputValue}
 		</div>
 	</div>
 {:else}

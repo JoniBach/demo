@@ -12,7 +12,10 @@
 		{:else if type.from === 'number'}
 			<input class="input" type="number" placeholder={param} bind:value={param} />
 		{:else if type.from === 'boolean'}
-			<input class="input" type="checkbox" placeholder={param} bind:value={param} />
+			<label class="input">
+				boolean
+				<input type="checkbox" placeholder={param} bind:value={param} />
+			</label>
 		{:else if type.from === 'date'}
 			<input class="input" type="text" placeholder={param} bind:value={param} />
 		{:else if type.from === 'object'}
@@ -26,11 +29,31 @@
 			<div class="input">
 				{objectToJsonString(param)}
 			</div>
+		{:else if type.from === 'objects-array'}
+			{#each param as param, i}
+				<div class="array input">
+					{#each Object.keys(param) as key}
+						<label>
+							{key}
+							<input class="input" type="text" placeholder={key} bind:value={param[key]} />
+						</label>
+					{/each}
+				</div>
+			{/each}
+		{:else if type.from === 'nested-objects-array'}
+			<div class="input">
+				{JSON.stringify(param)}
+			</div>
 		{/if}
 	{/if}
 {/each}
 
 <style>
+	.array {
+		border: 1px solid #ccc;
+		padding: 1rem;
+		margin-bottom: 1rem;
+	}
 	.input {
 		padding: 0.5rem;
 		border: 1px solid #ccc;

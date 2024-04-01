@@ -19,6 +19,10 @@
 			{objectToJsonString(outputValue)}
 		{:else if type.to === 'array'}
 			{objectToJsonString(outputValue)}
+		{:else if type.to === 'nested-array'}
+			{#each outputValue as item}
+				{objectToJsonString(item)}
+			{/each}
 		{/if}
 	{/if}
 </p>

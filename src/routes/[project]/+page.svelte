@@ -5,6 +5,7 @@
 	import projects from '$lib/config/projects';
 	import ToolInfo from '$lib/components/ToolInfo.svelte';
 	import ConvertDemo from '$lib/components/demo/ConvertDemo.svelte';
+	import CheckDemo from '$lib/components/demo/CheckDemo.svelte';
 
 	$: project = $page.params.project;
 
@@ -23,7 +24,7 @@
 					{#if item?.demo === 'convert'}
 						<ConvertDemo {item} />
 					{:else if item?.demo === 'check'}
-						check demo
+						<CheckDemo {item} />
 					{/if}
 				</Content>
 			{/each}

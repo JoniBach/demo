@@ -68,6 +68,7 @@ export default [
 				title: 'inArray', //
 				description: 'Checks if a value is in an array.', //
 				testFunction: inArray, //
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'numberArray',
 				params: [3, [1, 2, 3, 4, 5]]
@@ -78,6 +79,7 @@ export default [
 				title: 'inArray',
 				description: 'Checks if a value is in an array.',
 				testFunction: inArray,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'numberArray',
 				params: [3, [1, 2, 3, 4, 5]]
@@ -87,6 +89,7 @@ export default [
 				title: 'notInArray',
 				description: 'Checks if a value is not in an array.',
 				testFunction: notInArray,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'numberArray',
 				params: [6, [1, 2, 3, 4, 5]]
@@ -96,6 +99,7 @@ export default [
 				title: 'empty',
 				description: 'Checks if an array is empty.',
 				testFunction: empty,
+				type: { from: 'array', to: 'boolean' },
 				inputLabel: 'anyArray',
 				outputLabel: 'boolean',
 				params: [[], undefined]
@@ -105,6 +109,7 @@ export default [
 				title: 'notEmpty',
 				description: 'Checks if an array is not empty.',
 				testFunction: notEmpty,
+				type: { from: 'array', to: 'boolean' },
 				inputLabel: 'anyArray',
 				outputLabel: 'boolean',
 				params: [[1, 2], undefined]
@@ -119,6 +124,7 @@ export default [
 				title: 'isEqualTo',
 				description: 'Checks if two values are equal.',
 				testFunction: isEqualTo,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'number',
 				params: ['5', 5]
@@ -128,6 +134,7 @@ export default [
 				title: 'isNotEqualTo',
 				description: 'Checks if two values are not equal.',
 				testFunction: isNotEqualTo,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'number',
 				params: [5, 10]
@@ -137,6 +144,7 @@ export default [
 				title: 'isGreaterThan',
 				description: 'Checks if a value is greater than another value.',
 				testFunction: isGreaterThan,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'number',
 				params: [10, 5]
@@ -146,6 +154,7 @@ export default [
 				title: 'isLessThan',
 				description: 'Checks if a value is less than another value.',
 				testFunction: isLessThan,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'number',
 				params: [5, 10]
@@ -155,6 +164,7 @@ export default [
 				title: 'isGreaterThanOrEqualTo',
 				description: 'Checks if a value is greater than or equal to another value.',
 				testFunction: isGreaterThanOrEqualTo,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'number',
 				params: [10, 10]
@@ -164,6 +174,7 @@ export default [
 				title: 'isLessThanOrEqualTo',
 				description: 'Checks if a value is less than or equal to another value.',
 				testFunction: isLessThanOrEqualTo,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'number',
 				params: [5, 5]
@@ -173,6 +184,7 @@ export default [
 				title: 'isStrictlyEqualTo',
 				description: 'Checks if two values are strictly equal.',
 				testFunction: isStrictlyEqualTo,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'number',
 				params: [5, 5]
@@ -182,6 +194,7 @@ export default [
 				title: 'isStrictlyNotEqualTo',
 				description: 'Checks if two values are strictly not equal.',
 				testFunction: isStrictlyNotEqualTo,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'string',
 				params: [5, '5']
@@ -196,6 +209,7 @@ export default [
 				title: 'startsWith',
 				description: 'Checks if a string starts with another string.',
 				testFunction: startsWith,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'stringA',
 				outputLabel: 'stringB',
 				params: ['Hello!', 'Hel']
@@ -205,6 +219,7 @@ export default [
 				title: 'endsWith',
 				description: 'Checks if a string ends with another string.',
 				testFunction: endsWith,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'stringA',
 				outputLabel: 'stringB',
 				params: ['Hello!', 'world!']
@@ -214,6 +229,7 @@ export default [
 				title: 'contains',
 				description: 'Checks if a string contains another string.',
 				testFunction: contains,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'stringA',
 				outputLabel: 'stringB',
 				params: ['Hello!', 'lo, wo']
@@ -223,6 +239,7 @@ export default [
 				title: 'matches',
 				description: 'Checks if a string matches a regular expression.',
 				testFunction: matches,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'RegExp',
 				params: ['Hello!', /world!$/]
@@ -232,6 +249,7 @@ export default [
 				title: 'regex',
 				description: 'Checks if a string matches a regular expression.',
 				testFunction: regex,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'RegExp',
 				params: ['Hello!', /world!$/]
@@ -242,6 +260,7 @@ export default [
 				description: 'Checks if a string has a specific length.',
 
 				testFunction: lengthEquals,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'number',
 				params: ['Hello', 5]
@@ -251,6 +270,7 @@ export default [
 				title: 'lengthGreaterThan',
 				description: 'Checks if a string has a length greater than a specific value.',
 				testFunction: lengthGreaterThan,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'number',
 				params: ['Hello!', 5]
@@ -260,6 +280,7 @@ export default [
 				title: 'lengthLessThan',
 				description: 'Checks if a string has a length less than a specific value.',
 				testFunction: lengthLessThan,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'number',
 				params: ['Hi', 5]
@@ -269,6 +290,7 @@ export default [
 				title: 'validURL',
 				description: 'Checks if a string is a valid URL.',
 				testFunction: validURL,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'boolean',
 				params: ['https://www.example', undefined]
@@ -278,6 +300,7 @@ export default [
 				title: 'validEmail',
 				description: 'Checks if a string is a valid email address.',
 				testFunction: validEmail,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'boolean',
 				params: ['email@example', undefined]
@@ -287,6 +310,7 @@ export default [
 				title: 'domainMatches',
 				description: 'Checks if a string is a valid domain.',
 				testFunction: domainMatches,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'string',
 				params: ['https://www.example', 'www.example.com']
@@ -297,31 +321,40 @@ export default [
 		title: 'Data ',
 		items: [
 			{
+				demo: 'convert',
 				title: 'objectToArray',
-
 				description: 'Converts an object to an array of key-value pairs.',
 				testFunction: objectToArray,
-				defaultValue: { key1: 'value1', key2: 'value2' },
+				params: [{ key1: 'value1', key2: 'value2' }],
+				type: { from: 'object', to: 'array' },
 				inputLabel: 'object',
 				outputLabel: 'arrayOfKeyValuePairs'
 			},
 			{
+				demo: 'convert',
 				title: 'arrayToObject',
 				description: 'Converts an array of key-value pairs to an object.',
 				testFunction: arrayToObject,
-				defaultValue: [
-					['key1', 'value1'],
-					['key2', 'value2']
+				type: { from: 'nested-objects-array', to: 'object' },
+
+				params: [
+					[
+						['key1', 'value1'],
+						['key2', 'value2']
+					]
 				],
 				inputLabel: 'arrayOfKeyValuePairs',
 				outputLabel: 'object'
 			},
 			{
+				// demo: 'convert',
 				title: 'mapToObject',
 
 				description: 'Converts a map to an object.',
 				testFunction: mapToObject,
-				defaultValue: new Map([
+				type: { from: 'array', to: 'object' },
+
+				params: new Map([
 					['key1', 'value1'],
 					['key2', 'value2']
 				]),
@@ -329,48 +362,64 @@ export default [
 				outputLabel: 'object'
 			},
 			{
+				// demo: 'convert',
 				title: 'objectToMap',
 				description: 'Converts an object to a map.',
 				testFunction: objectToMap,
-				defaultValue: { key1: 'value1', key2: 'value2' },
+
+				params: { key1: 'value1', key2: 'value2' },
+				type: { from: 'object', to: 'boolean' },
 				inputLabel: 'object',
 				outputLabel: 'Map'
 			},
 			{
+				// demo: 'convert',
 				title: 'setToArray',
 
 				description: 'Converts a set to an array.',
 				testFunction: setToArray,
-				defaultValue: new Set(['value1', 'value2']),
+
+				params: new Set(['value1', 'value2']),
 				inputLabel: 'Set',
 				outputLabel: 'array'
 			},
 			{
+				// demo: 'convert',
 				title: 'arrayToSet',
 				description: 'Converts an array to a set.',
 				testFunction: arrayToSet,
-				defaultValue: ['value1', 'value2'],
+
+				params: ['value1', 'value2'],
+				type: { from: 'array', to: 'boolean' },
 				inputLabel: 'array',
 				outputLabel: 'Set'
 			},
 			{
+				// demo: 'convert',
 				title: 'arrayToFlatArray',
 				description: 'Converts a nested array to a flat array.',
 				testFunction: arrayToFlatArray,
-				defaultValue: [1, [2, [3, [4, 5]]]],
+
+				params: [1, [2, [3, [4, 5]]]],
 				inputLabel: 'nestedArray',
 				outputLabel: 'flattenedArray'
 			},
 			{
+				demo: 'convert',
 				title: 'arrayToGroup',
 				description: 'Groups an array of objects by a key.',
 				testFunction: arrayToGroup,
-				defaultValue: [
-					{ category: 'fruit', name: 'apple' },
-					{ category: 'fruit', name: 'banana' },
-					{ category: 'vegetable', name: 'carrot' }
+
+				params: [
+					[
+						{ category: 'fruit', name: 'apple' },
+						{ category: 'fruit', name: 'banana' },
+						{ category: 'vegetable', name: 'carrot' }
+					],
+					'category'
 				],
 				additionalParams: 'key: string',
+				type: { from: 'array', to: 'array' },
 				inputLabel: 'arrayOfObjects',
 				outputLabel: 'objectGroupedByKey'
 			}
@@ -381,17 +430,13 @@ export default [
 		items: [
 			{
 				demo: 'check',
-
 				description: 'Checks if all values are true.',
-
 				title: 'and',
 				testFunction: and,
+				type: { from: 'boolean', to: 'boolean' },
 				inputLabel: 'booleanArray',
 				outputLabel: 'boolean',
-				params: [
-					[true, true],
-					undefined // This value is not used for this check
-				]
+				params: [true, true]
 			},
 			{
 				demo: 'check',
@@ -399,12 +444,10 @@ export default [
 				description: 'Checks if any value is true.',
 				title: 'or',
 				testFunction: or,
+				type: { from: 'boolean', to: 'boolean' },
 				inputLabel: 'booleanArray',
 				outputLabel: 'boolean',
-				params: [
-					[false, false],
-					undefined // This value is not used for this check
-				]
+				params: [false, false]
 			},
 			{
 				demo: 'check',
@@ -412,6 +455,7 @@ export default [
 
 				description: 'Checks if a value is false.',
 				testFunction: not,
+				type: { from: 'boolean', to: 'boolean' },
 				inputLabel: 'boolean',
 				outputLabel: 'boolean',
 				params: [
@@ -425,6 +469,7 @@ export default [
 				description: 'Checks if exactly one value is true.',
 				title: 'xor',
 				testFunction: xor,
+				type: { from: 'boolean', to: 'boolean' },
 				inputLabel: 'boolean',
 				outputLabel: 'boolean',
 				params: [true, false]
@@ -435,6 +480,7 @@ export default [
 				description: 'Checks if neither value is true.',
 				title: 'nand',
 				testFunction: nand,
+				type: { from: 'boolean', to: 'boolean' },
 				inputLabel: 'boolean',
 				outputLabel: 'boolean',
 				params: [true, true]
@@ -444,6 +490,7 @@ export default [
 				demo: 'check',
 				title: 'nor',
 				testFunction: nor,
+				type: { from: 'boolean', to: 'boolean' },
 				inputLabel: 'boolean',
 				outputLabel: 'boolean',
 				params: [false, false]
@@ -459,12 +506,10 @@ export default [
 				description: 'Checks if a number is even.',
 				title: 'even',
 				testFunction: even,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'boolean',
-				params: [
-					4,
-					undefined // This value is not used for this check
-				]
+				params: [4]
 			},
 			{
 				demo: 'check',
@@ -472,12 +517,10 @@ export default [
 				description: 'Checks if a number is odd.',
 				title: 'odd',
 				testFunction: odd,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'boolean',
-				params: [
-					5,
-					undefined // This value is not used for this check
-				]
+				params: [5]
 			},
 			{
 				demo: 'check',
@@ -485,6 +528,7 @@ export default [
 				description: 'Checks if a number is divisible by another number.',
 				title: 'divisibleBy',
 				testFunction: divisibleBy,
+				type: { from: 'number', to: 'boolean' },
 				inputLabel: 'number',
 				outputLabel: 'number',
 				params: [10, 2]
@@ -500,12 +544,10 @@ export default [
 				description: 'Checks if a value exists.',
 				title: 'exists',
 				testFunction: exists,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'any',
 				outputLabel: 'boolean',
-				params: [
-					null,
-					undefined // This value is not used for this check
-				]
+				params: [null]
 			},
 			{
 				demo: 'check',
@@ -513,12 +555,10 @@ export default [
 				description: 'Checks if a value does not exist.',
 				title: 'doesNotExist',
 				testFunction: doesNotExist,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'any',
 				outputLabel: 'boolean',
-				params: [
-					undefined,
-					null // This value is not used for this check
-				]
+				params: [undefined]
 			}
 		]
 	},
@@ -531,6 +571,7 @@ export default [
 				description: 'Checks if a date is before another date.',
 				title: 'before',
 				testFunction: before,
+				type: { from: 'date', to: 'boolean' },
 				inputLabel: 'Date',
 				outputLabel: 'Date',
 				params: [new Date('2020-01'), new Date('2020-01-02')]
@@ -541,6 +582,7 @@ export default [
 				description: 'Checks if a date is after another date.',
 				title: 'after',
 				testFunction: after,
+				type: { from: 'date', to: 'boolean' },
 				inputLabel: 'Date',
 				outputLabel: 'Date',
 				params: [new Date('2020-01'), new Date('2020-01-01')]
@@ -551,6 +593,7 @@ export default [
 				description: 'Checks if a date is between two dates.',
 				title: 'betweenDates',
 				testFunction: betweenDates,
+				type: { from: 'date', to: 'boolean' },
 				inputLabel: 'Date',
 				outputLabel: 'DateArray',
 				params: [new Date('2020-01'), [new Date('2020-01-01'), new Date('2020-01-03')]]
@@ -561,6 +604,7 @@ export default [
 				description: 'Checks if two dates are on the same day.',
 				title: 'sameDay',
 				testFunction: sameDay,
+				type: { from: 'date', to: 'boolean' },
 				inputLabel: 'Date',
 				outputLabel: 'Date',
 				params: [new Date('2020-01'), new Date('2020-01-01')]
@@ -576,6 +620,7 @@ export default [
 				description: 'Checks if a key exists in an object.',
 				title: 'keyExists',
 				testFunction: keyExists,
+				type: { from: 'object', to: 'boolean' },
 				inputLabel: 'object',
 				outputLabel: 'string',
 				params: [
@@ -591,6 +636,7 @@ export default [
 				description: 'Checks if a key does not exist in an object.',
 				title: 'keyDoesNotExist',
 				testFunction: keyDoesNotExist,
+				type: { from: 'object', to: 'boolean' },
 				inputLabel: 'object',
 				outputLabel: 'string',
 				params: [
@@ -606,120 +652,156 @@ export default [
 		title: 'Array Filtering',
 		items: [
 			{
-				type: 'filter',
+				//type: 'filter',
+				demo: 'convert',
 
 				description: 'Converts an array of objects into an array of strings.',
 				testFunction: objectArrayToArrayOfString,
 				title: 'objectArrayToArrayOfString',
+				type: { from: 'objects-array', to: 'array' },
 				inputLabel: 'arrayOfObjects',
 				outputLabel: 'arrayOfStrings',
-				defaultValue: 'John',
-				data: [
-					{ name: 'John', age: 30 },
-					{ name: 'Jane', occupation: 'Developer' }
+				params: [
+					[
+						{ name: 'John', age: 30 },
+						{ name: 'Jane', occupation: 'Developer' }
+					]
 				]
 			},
 			{
-				type: 'filter',
-
+				demo: 'convert',
 				description:
 					'Flattens a nested array of objects and concatenates all values into a single string.',
 				testFunction: nestedObjectArrayValuesToString,
 				title: 'nestedObjectArrayValuesToString',
 				inputLabel: 'nestedArrayOfObjects',
 				outputLabel: 'string',
-				defaultValue: 'Developer', // Example search term for demonstration
-				data: [[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]]]
+				type: { from: 'nested-objects-array', to: 'array' },
+				params: [
+					[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]],
+					'Developer'
+				]
 			},
 			{
-				type: 'filter',
+				//type: 'filter',
+				demo: 'convert',
 				description:
 					'Flattens a nested array of objects and concatenates all keys into a single string.',
 				testFunction: nestedObjectArrayKeysToString,
 				title: 'nestedObjectArrayKeysToString',
 				inputLabel: 'nestedArrayOfObjects',
 				outputLabel: 'string',
-				defaultValue: 'occupation', // Example key to search for in demonstration
-				data: [[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]]]
+				type: { from: 'nested-objects-array', to: 'string' },
+
+				params: [
+					[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]],
+					'Developer'
+				]
 			},
 			{
-				type: 'filter',
+				//type: 'filter',
+				demo: 'convert',
 				description:
 					'Flattens a nested array of objects and converts each object to a string representation.',
 				testFunction: nestedObjectArrayToString,
 				title: 'nestedObjectArrayToString',
 				inputLabel: 'nestedArrayOfObjects',
 				outputLabel: 'string',
-				defaultValue: 'John', // Example name to search for in demonstration
-				data: [[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]]]
+				type: { from: 'nested-objects-array', to: 'string' },
+
+				params: [
+					[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]],
+					'Developer'
+				]
 			},
 			{
-				type: 'filter',
+				//type: 'filter',
+				demo: 'convert',
 				description:
 					'Flattens a nested array of objects and converts each object to a query string representation.',
 				testFunction: nestedObjectArrayToQueryString,
 				title: 'nestedObjectArrayToQueryString',
 				inputLabel: 'nestedArrayOfObjects',
 				outputLabel: 'string',
-				defaultValue: 'age=30', // Example query string piece to search for in demonstration
-				data: [[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]]]
+				type: { from: 'nested-objects-array', to: 'string' },
+
+				params: [
+					[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]],
+					'Developer'
+				]
 			},
 			{
-				type: 'filter',
+				//type: 'filter',
+				demo: 'convert',
 				description:
 					'Converts an array of objects into an array with each object accompanied by its string representation.',
 				testFunction: arrayWithObjectAndString,
 				title: 'arrayWithObjectAndString',
 				inputLabel: 'arrayOfObjects',
 				outputLabel: 'arrayOfOriginalAndString',
-				defaultValue: 'Developer', // Example search term for demonstration
-				data: [
-					{ name: 'John', age: 30 },
-					{ name: 'Jane', occupation: 'Developer' }
+				type: { from: 'array', to: 'nested-array' },
+
+				params: [
+					[
+						{ name: 'John', age: 30 },
+						{ name: 'Jane', occupation: 'Developer' }
+					],
+					'Developer'
 				]
 			},
 			{
-				type: 'filter',
+				//type: 'filter',
+				demo: 'convert',
 				description: 'Searches a string for a partial match regardless of case.',
 				testFunction: searchString,
 				title: 'searchString',
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'string',
 				outputLabel: 'boolean',
-				defaultValue: 'fox', // The term users might search for in the string
-				data: 'The quick brown fox jumps over the lazy dog.'
+
+				params: ['fox', 'The quick brown fox jumps over the lazy dog.']
 			},
 			{
-				type: 'filter',
+				//type: 'filter',
+				demo: 'check',
 				description:
 					'Filters an array of transformed objects, returning only those that match the search term, in their original format.',
 				testFunction: filterArrayByString,
 				title: 'filterArrayByString',
+				type: { from: 'string', to: 'array' },
 				inputLabel: 'arrayOfTransformedObjects',
 				outputLabel: 'arrayOfObjects',
-				defaultValue: 'Developer', // Search term used for filtering the array
-				data: [
-					{ original: { name: 'Dave', age: 42 }, objectString: 'Dave, 42' },
-					{
-						original: { name: 'Jane', occupation: 'Developer', experience: '5 years' },
-						objectString: 'Jane, Developer, 5 years'
-					}
+
+				params: [
+					[
+						{ original: { name: 'Dave', age: 42 }, objectString: 'Dave, 42' },
+						{
+							original: { name: 'Jane', occupation: 'Developer', experience: '5 years' },
+							objectString: 'Jane, Developer, 5 years'
+						}
+					],
+					'Developer'
 				]
 			},
 			{
-				type: 'filter',
+				//type: 'filter',
 				description:
 					'Filters an array of transformed objects based on a search term, retaining the transformed format.',
 				testFunction: filterArrayByStringRaw,
 				title: 'filterArrayByStringRaw',
+				type: { from: 'array', to: 'array' },
 				inputLabel: 'arrayOfTransformedObjects',
 				outputLabel: 'arrayOfTransformedObjects',
-				defaultValue: 'Developer', // Search term used for filtering the array
-				data: [
-					{ original: { name: 'Dave', age: 42 }, objectString: 'Dave, 42' },
-					{
-						original: { name: 'Jane', occupation: 'Developer', experience: '5 years' },
-						objectString: 'Jane, Developer, 5 years'
-					}
+
+				params: [
+					[
+						{ original: { name: 'Dave', age: 42 }, objectString: 'Dave, 42' },
+						{
+							original: { name: 'Jane', occupation: 'Developer', experience: '5 years' },
+							objectString: 'Jane, Developer, 5 years'
+						}
+					],
+					'Developer'
 				]
 			}
 		]
@@ -733,6 +815,7 @@ export default [
 				title: 'checkType',
 				description: 'Checks if a value is of a specific type.',
 				testFunction: checkType,
+				type: { from: 'string', to: 'boolean' },
 				inputLabel: 'any',
 				outputLabel: 'string',
 				params: ['Hello', 'string']
