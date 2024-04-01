@@ -6,6 +6,7 @@
 	import ToolInfo from '$lib/components/ToolInfo.svelte';
 	import ConvertDemo from '$lib/components/demo/ConvertDemo.svelte';
 	import CheckDemo from '$lib/components/demo/CheckDemo.svelte';
+	import DynamicDemo from '$lib/components/demo/DynamicDemo.svelte';
 
 	$: project = $page.params.project;
 
@@ -25,6 +26,8 @@
 						<ConvertDemo {item} />
 					{:else if item?.demo === 'check'}
 						<CheckDemo {item} />
+					{:else if item?.demo === 'dynamic'}
+						<DynamicDemo {item} />
 					{/if}
 				</Content>
 			{/each}

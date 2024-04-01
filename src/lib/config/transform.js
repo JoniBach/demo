@@ -56,10 +56,68 @@ import {
 	nestedObjectArrayToString,
 	nestedObjectArrayValuesToString,
 	objectArrayToArrayOfString,
-	searchString
+	searchString,
+	checkCondition,
+	checkConditions,
+	filterByObjectCondition,
+	filterByObjectConditions
 } from '@jonibach/transform';
 
+const data = [
+	{ id: 1, category: 'fruit', name: 'Apple' },
+	{ id: 2, category: 'vegetable', name: 'Carrot' },
+	{ id: 3, category: 'fruit', name: 'Banana' },
+	{ id: 4, category: 'fruit', name: 'Cherry' }
+];
+
 export default [
+	{
+		title: 'Dynamic',
+		items: [
+			{
+				demo: 'dynamic', //
+				title: 'checkCondition', //
+				description: 'Return true if condition matches', //
+				testFunction: checkCondition, //
+				type: { from: 'array', to: 'array' },
+				inputLabel: 'array',
+				outputLabel: 'transformedArray',
+				params: ['query-array']
+			},
+			{
+				demo: 'dynamic', //
+				title: 'checkConditions', //
+				description: 'Return true if condition matches across multiple arrays', //
+				testFunction: checkConditions, //
+				type: { from: 'array', to: 'array' },
+				inputLabel: 'array',
+				outputLabel: 'transformedArray',
+				params: ['query-arrays']
+			},
+			{
+				demo: 'dynamic', //
+				title: 'filterByObjectCondition', //
+				description: 'Return objects if condition matches across an array', //
+				testFunction: filterByObjectCondition, //
+				type: { from: 'array', to: 'array' },
+				inputLabel: 'array',
+				outputLabel: 'transformedArray',
+				data,
+				params: ['data', 'query-array']
+			},
+			{
+				demo: 'dynamic', //
+				title: 'filterByObjectConditions', //
+				description: 'Return objects if condition matches across multiple arrays', //
+				testFunction: filterByObjectConditions, //
+				type: { from: 'array', to: 'array' },
+				inputLabel: 'array',
+				outputLabel: 'transformedArray',
+				data,
+				params: ['data', 'query-arrays']
+			}
+		]
+	},
 	{
 		title: 'Array',
 		items: [
