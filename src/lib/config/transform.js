@@ -59,7 +59,6 @@ import {
     searchString
 } from '@jonibach/transform';
 
-
 export default [
     {
         title: 'Array',
@@ -68,7 +67,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'inArray',
-                converter: inArray,
+                description: 'Checks if a value is in an array.',
+                testFunction: inArray,
                 from: 'number',
                 to: 'number[]',
                 value1: 3,
@@ -78,7 +78,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'notInArray',
-                converter: notInArray,
+                description: 'Checks if a value is not in an array.',
+                testFunction: notInArray,
                 from: 'number',
                 to: 'number[]',
                 value1: 6,
@@ -88,7 +89,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'empty',
-                converter: empty,
+                description: 'Checks if an array is empty.',
+                testFunction: empty,
                 from: 'any[]',
                 to: 'boolean',
                 value1: [],
@@ -98,7 +100,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'notEmpty',
-                converter: notEmpty,
+                description: 'Checks if an array is not empty.',
+                testFunction: notEmpty,
                 from: 'any[]',
                 to: 'boolean',
                 value1: [1, 2, 3],
@@ -113,7 +116,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'isEqualTo',
-                converter: isEqualTo,
+                description: 'Checks if two values are equal.',
+                testFunction: isEqualTo,
                 from: 'string',
                 to: 'number',
                 value1: '5',
@@ -123,7 +127,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'isNotEqualTo',
-                converter: isNotEqualTo,
+                description: 'Checks if two values are not equal.',
+                testFunction: isNotEqualTo,
                 from: 'number',
                 to: 'number',
                 value1: 5,
@@ -133,7 +138,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'isGreaterThan',
-                converter: isGreaterThan,
+                description: 'Checks if a value is greater than another value.',
+                testFunction: isGreaterThan,
                 from: 'number',
                 to: 'number',
                 value1: 10,
@@ -143,7 +149,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'isLessThan',
-                converter: isLessThan,
+                description: 'Checks if a value is less than another value.',
+                testFunction: isLessThan,
                 from: 'number',
                 to: 'number',
                 value1: 5,
@@ -153,7 +160,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'isGreaterThanOrEqualTo',
-                converter: isGreaterThanOrEqualTo,
+                description: 'Checks if a value is greater than or equal to another value.',
+                testFunction: isGreaterThanOrEqualTo,
                 from: 'number',
                 to: 'number',
                 value1: 10,
@@ -163,7 +171,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'isLessThanOrEqualTo',
-                converter: isLessThanOrEqualTo,
+                description: 'Checks if a value is less than or equal to another value.',
+                testFunction: isLessThanOrEqualTo,
                 from: 'number',
                 to: 'number',
                 value1: 5,
@@ -173,7 +182,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'isStrictlyEqualTo',
-                converter: isStrictlyEqualTo,
+                description: 'Checks if two values are strictly equal.',
+                testFunction: isStrictlyEqualTo,
                 from: 'number',
                 to: 'number',
                 value1: 5,
@@ -183,7 +193,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'isStrictlyNotEqualTo',
-                converter: isStrictlyNotEqualTo,
+                description: 'Checks if two values are strictly not equal.',
+                testFunction: isStrictlyNotEqualTo,
                 from: 'number',
                 to: 'string',
                 value1: 5,
@@ -198,7 +209,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'startsWith',
-                converter: startsWith,
+                description: 'Checks if a string starts with another string.',
+                testFunction: startsWith,
                 from: 'stringA',
                 to: 'stringB',
                 value1: 'Hello, world!',
@@ -208,7 +220,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'endsWith',
-                converter: endsWith,
+                description: 'Checks if a string ends with another string.',
+                testFunction: endsWith,
                 from: 'stringA',
                 to: 'stringB',
                 value1: 'Hello, world!',
@@ -218,7 +231,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'contains',
-                converter: contains,
+                description: 'Checks if a string contains another string.',
+                testFunction: contains,
                 from: 'stringA',
                 to: 'stringB',
                 value1: 'Hello, world!',
@@ -228,7 +242,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'matches',
-                converter: matches,
+                description: 'Checks if a string matches a regular expression.',
+                testFunction: matches,
                 from: 'string',
                 to: 'RegExp',
                 value1: 'Hello, world!',
@@ -238,7 +253,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'regex',
-                converter: regex,
+                description: 'Checks if a string matches a regular expression.',
+                testFunction: regex,
                 from: 'string',
                 to: 'RegExp',
                 value1: 'Hello, world!',
@@ -248,7 +264,9 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'lengthEquals',
-                converter: lengthEquals,
+                description: 'Checks if a string has a specific length.',
+
+                testFunction: lengthEquals,
                 from: 'string',
                 to: 'number',
                 value1: 'Hello',
@@ -258,7 +276,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'lengthGreaterThan',
-                converter: lengthGreaterThan,
+                description: 'Checks if a string has a length greater than a specific value.',
+                testFunction: lengthGreaterThan,
                 from: 'string',
                 to: 'number',
                 value1: 'Hello, world!',
@@ -268,7 +287,8 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'lengthLessThan',
-                converter: lengthLessThan,
+                description: 'Checks if a string has a length less than a specific value.',
+                testFunction: lengthLessThan,
                 from: 'string',
                 to: 'number',
                 value1: 'Hi',
@@ -278,31 +298,34 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'validURL',
-                converter: validURL,
+                description: 'Checks if a string is a valid URL.',
+                testFunction: validURL,
                 from: 'string',
                 to: 'boolean',
-                value1: "https://www.example.com",
+                value1: 'https://www.example.com',
                 value2: undefined
             },
             {
                 type: 'check',
                 readOnly: false,
                 title: 'validEmail',
-                converter: validEmail,
+                description: 'Checks if a string is a valid email address.',
+                testFunction: validEmail,
                 from: 'string',
                 to: 'boolean',
-                value1: "email@example.com",
+                value1: 'email@example.com',
                 value2: undefined
             },
             {
                 type: 'check',
                 readOnly: false,
                 title: 'domainMatches',
-                converter: domainMatches,
+                description: 'Checks if a string is a valid domain.',
+                testFunction: domainMatches,
                 from: 'string',
                 to: 'string',
-                value1: "https://www.example.com",
-                value2: "www.example.com"
+                value1: 'https://www.example.com',
+                value2: 'www.example.com'
             }
         ]
     },
@@ -312,7 +335,9 @@ export default [
             {
                 readOnly: true,
                 title: 'objectToArray',
-                converter: objectToArray,
+
+                description: 'Converts an object to an array of key-value pairs.',
+                testFunction: objectToArray,
                 defaultValue: { key1: 'value1', key2: 'value2' },
                 from: 'object',
                 to: 'arrayOfKeyValuePairs'
@@ -320,23 +345,33 @@ export default [
             {
                 readOnly: true,
                 title: 'arrayToObject',
-                converter: arrayToObject,
-                defaultValue: [['key1', 'value1'], ['key2', 'value2']],
+                description: 'Converts an array of key-value pairs to an object.',
+                testFunction: arrayToObject,
+                defaultValue: [
+                    ['key1', 'value1'],
+                    ['key2', 'value2']
+                ],
                 from: 'arrayOfKeyValuePairs',
                 to: 'object'
             },
             {
                 readOnly: true,
                 title: 'mapToObject',
-                converter: mapToObject,
-                defaultValue: new Map([['key1', 'value1'], ['key2', 'value2']]),
+
+                description: 'Converts a map to an object.',
+                testFunction: mapToObject,
+                defaultValue: new Map([
+                    ['key1', 'value1'],
+                    ['key2', 'value2']
+                ]),
                 from: 'Map',
                 to: 'object'
             },
             {
                 readOnly: true,
                 title: 'objectToMap',
-                converter: objectToMap,
+                description: 'Converts an object to a map.',
+                testFunction: objectToMap,
                 defaultValue: { key1: 'value1', key2: 'value2' },
                 from: 'object',
                 to: 'Map'
@@ -344,7 +379,9 @@ export default [
             {
                 readOnly: true,
                 title: 'setToArray',
-                converter: setToArray,
+
+                description: 'Converts a set to an array.',
+                testFunction: setToArray,
                 defaultValue: new Set(['value1', 'value2']),
                 from: 'Set',
                 to: 'array'
@@ -352,7 +389,8 @@ export default [
             {
                 readOnly: true,
                 title: 'arrayToSet',
-                converter: arrayToSet,
+                description: 'Converts an array to a set.',
+                testFunction: arrayToSet,
                 defaultValue: ['value1', 'value2'],
                 from: 'array',
                 to: 'Set'
@@ -360,7 +398,8 @@ export default [
             {
                 readOnly: true,
                 title: 'arrayToFlatArray',
-                converter: arrayToFlatArray,
+                description: 'Converts a nested array to a flat array.',
+                testFunction: arrayToFlatArray,
                 defaultValue: [1, [2, [3, [4, 5]]]],
                 from: 'nestedArray',
                 to: 'flattenedArray'
@@ -368,8 +407,13 @@ export default [
             {
                 readOnly: true,
                 title: 'arrayToGroup',
-                converter: arrayToGroup,
-                defaultValue: [{ category: 'fruit', name: 'apple' }, { category: 'fruit', name: 'banana' }, { category: 'vegetable', name: 'carrot' }],
+                description: 'Groups an array of objects by a key.',
+                testFunction: arrayToGroup,
+                defaultValue: [
+                    { category: 'fruit', name: 'apple' },
+                    { category: 'fruit', name: 'banana' },
+                    { category: 'vegetable', name: 'carrot' }
+                ],
                 additionalParams: 'key: string',
                 from: 'arrayOfObjects',
                 to: 'objectGroupedByKey'
@@ -381,9 +425,12 @@ export default [
         items: [
             {
                 type: 'check',
+
+                description: 'Checks if all values are true.',
+
                 readOnly: false,
                 title: 'and',
-                converter: and,
+                testFunction: and,
                 from: 'boolean[]',
                 to: 'boolean',
                 value1: [true, true, false],
@@ -391,9 +438,11 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if any value is true.',
                 readOnly: false,
                 title: 'or',
-                converter: or,
+                testFunction: or,
                 from: 'boolean[]',
                 to: 'boolean',
                 value1: [false, false, true],
@@ -403,7 +452,9 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'not',
-                converter: not,
+
+                description: 'Checks if a value is false.',
+                testFunction: not,
                 from: 'boolean',
                 to: 'boolean',
                 value1: false,
@@ -411,9 +462,11 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if exactly one value is true.',
                 readOnly: false,
                 title: 'xor',
-                converter: xor,
+                testFunction: xor,
                 from: 'boolean',
                 to: 'boolean',
                 value1: true,
@@ -421,19 +474,22 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if neither value is true.',
                 readOnly: false,
                 title: 'nand',
-                converter: nand,
+                testFunction: nand,
                 from: 'boolean',
                 to: 'boolean',
                 value1: true,
                 value2: true
             },
             {
+                description: 'Checks if neither value is true.',
                 type: 'check',
                 readOnly: false,
                 title: 'nor',
-                converter: nor,
+                testFunction: nor,
                 from: 'boolean',
                 to: 'boolean',
                 value1: false,
@@ -446,9 +502,11 @@ export default [
         items: [
             {
                 type: 'check',
+
+                description: 'Checks if a number is even.',
                 readOnly: false,
                 title: 'even',
-                converter: even,
+                testFunction: even,
                 from: 'number',
                 to: 'boolean',
                 value1: 4,
@@ -456,9 +514,11 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if a number is odd.',
                 readOnly: false,
                 title: 'odd',
-                converter: odd,
+                testFunction: odd,
                 from: 'number',
                 to: 'boolean',
                 value1: 5,
@@ -466,9 +526,11 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if a number is divisible by another number.',
                 readOnly: false,
                 title: 'divisibleBy',
-                converter: divisibleBy,
+                testFunction: divisibleBy,
                 from: 'number',
                 to: 'number',
                 value1: 10,
@@ -481,9 +543,11 @@ export default [
         items: [
             {
                 type: 'check',
+
+                description: 'Checks if a value exists.',
                 readOnly: false,
                 title: 'exists',
-                converter: exists,
+                testFunction: exists,
                 from: 'any',
                 to: 'boolean',
                 value1: null,
@@ -491,9 +555,11 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if a value does not exist.',
                 readOnly: false,
                 title: 'doesNotExist',
-                converter: doesNotExist,
+                testFunction: doesNotExist,
                 from: 'any',
                 to: 'boolean',
                 value1: undefined,
@@ -506,9 +572,11 @@ export default [
         items: [
             {
                 type: 'check',
+
+                description: 'Checks if a date is before another date.',
                 readOnly: false,
                 title: 'before',
-                converter: before,
+                testFunction: before,
                 from: 'Date',
                 to: 'Date',
                 value1: new Date('2020-01-01'),
@@ -516,9 +584,11 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if a date is after another date.',
                 readOnly: false,
                 title: 'after',
-                converter: after,
+                testFunction: after,
                 from: 'Date',
                 to: 'Date',
                 value1: new Date('2020-01-02'),
@@ -526,9 +596,11 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if a date is between two dates.',
                 readOnly: false,
                 title: 'betweenDates',
-                converter: betweenDates,
+                testFunction: betweenDates,
                 from: 'Date',
                 to: 'Date[]',
                 value1: new Date('2020-01-02'),
@@ -536,9 +608,11 @@ export default [
             },
             {
                 type: 'check',
+
+                description: 'Checks if two dates are on the same day.',
                 readOnly: false,
                 title: 'sameDay',
-                converter: sameDay,
+                testFunction: sameDay,
                 from: 'Date',
                 to: 'Date',
                 value1: new Date('2020-01-01'),
@@ -551,141 +625,161 @@ export default [
         items: [
             {
                 type: 'check',
+
+                description: 'Checks if a key exists in an object.',
                 readOnly: false,
                 title: 'keyExists',
-                converter: keyExists,
+                testFunction: keyExists,
                 from: 'object',
                 to: 'string',
-                value1: { hello: "world" },
-                value2: "hello"
+                value1: { hello: 'world' },
+                value2: 'hello'
             },
             {
                 type: 'check',
+
+                description: 'Checks if a key does not exist in an object.',
                 readOnly: false,
                 title: 'keyDoesNotExist',
-                converter: keyDoesNotExist,
+                testFunction: keyDoesNotExist,
                 from: 'object',
                 to: 'string',
-                value1: { hello: "world" },
-                value2: "world"
-            },
-
+                value1: { hello: 'world' },
+                value2: 'world'
+            }
         ]
     },
     {
         title: 'Array Filtering',
         items: [
-
-
             {
                 type: 'filter',
+
+                description: 'Converts an array of objects into an array of strings.',
                 readOnly: false,
-                title: 'Object Array to Array of Strings',
-                converter: objectArrayToArrayOfString,
+                testFunction: objectArrayToArrayOfString,
+                title: 'objectArrayToArrayOfString',
                 from: 'arrayOfObjects',
                 to: 'arrayOfStrings',
                 defaultValue: 'John',
-                data: [{ name: "John", age: 30 }, { name: "Jane", occupation: "Developer" }]
+                data: [
+                    { name: 'John', age: 30 },
+                    { name: 'Jane', occupation: 'Developer' }
+                ]
             },
             {
                 type: 'filter',
+
                 readOnly: false,
-                title: 'Nested Object Array Values to String',
-                description: 'Flattens a nested array of objects and concatenates all values into a single string.',
-                converter: nestedObjectArrayValuesToString,
+                description:
+                    'Flattens a nested array of objects and concatenates all values into a single string.',
+                testFunction: nestedObjectArrayValuesToString,
+                title: 'nestedObjectArrayValuesToString',
                 from: 'nestedArrayOfObjects',
                 to: 'string',
                 defaultValue: 'Developer', // Example search term for demonstration
-                data: [[{ name: "John", age: 30 }, [{ name: "Jane", occupation: "Developer" }]]]
+                data: [[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]]]
             },
             {
                 type: 'filter',
                 readOnly: false,
-                title: 'Nested Object Array Keys to String',
-                description: 'Flattens a nested array of objects and concatenates all keys into a single string.',
-                converter: nestedObjectArrayKeysToString,
+                description:
+                    'Flattens a nested array of objects and concatenates all keys into a single string.',
+                testFunction: nestedObjectArrayKeysToString,
+                title: 'nestedObjectArrayKeysToString',
                 from: 'nestedArrayOfObjects',
                 to: 'string',
                 defaultValue: 'occupation', // Example key to search for in demonstration
-                data: [[{ name: "John", age: 30 }, [{ name: "Jane", occupation: "Developer" }]]]
+                data: [[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]]]
             },
             {
                 type: 'filter',
                 readOnly: false,
-                title: 'Nested Object Array to String',
-                description: 'Flattens a nested array of objects and converts each object to a string representation.',
-                converter: nestedObjectArrayToString,
+                description:
+                    'Flattens a nested array of objects and converts each object to a string representation.',
+                testFunction: nestedObjectArrayToString,
+                title: 'nestedObjectArrayToString',
                 from: 'nestedArrayOfObjects',
                 to: 'string',
                 defaultValue: 'John', // Example name to search for in demonstration
-                data: [[{ name: "John", age: 30 }, [{ name: "Jane", occupation: "Developer" }]]]
+                data: [[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]]]
             },
             {
                 type: 'filter',
                 readOnly: false,
-                title: 'Nested Object Array to Query String',
-                description: 'Flattens a nested array of objects and converts each object to a query string representation.',
-                converter: nestedObjectArrayToQueryString,
+                description:
+                    'Flattens a nested array of objects and converts each object to a query string representation.',
+                testFunction: nestedObjectArrayToQueryString,
+                title: 'nestedObjectArrayToQueryString',
                 from: 'nestedArrayOfObjects',
                 to: 'string',
                 defaultValue: 'age=30', // Example query string piece to search for in demonstration
-                data: [[{ name: "John", age: 30 }, [{ name: "Jane", occupation: "Developer" }]]]
+                data: [[{ name: 'John', age: 30 }, [{ name: 'Jane', occupation: 'Developer' }]]]
             },
             {
                 type: 'filter',
                 readOnly: false,
-                title: 'Array With Object And String',
-                description: 'Converts an array of objects into an array with each object accompanied by its string representation.',
-                converter: arrayWithObjectAndString,
+                description:
+                    'Converts an array of objects into an array with each object accompanied by its string representation.',
+                testFunction: arrayWithObjectAndString,
+                title: 'arrayWithObjectAndString',
                 from: 'arrayOfObjects',
                 to: 'arrayOfOriginalAndString',
                 defaultValue: 'Developer', // Example search term for demonstration
-                data: [{ name: "John", age: 30 }, { name: "Jane", occupation: "Developer" }]
+                data: [
+                    { name: 'John', age: 30 },
+                    { name: 'Jane', occupation: 'Developer' }
+                ]
             },
             {
                 type: 'filter',
                 readOnly: false,
-                title: 'Search String',
                 description: 'Searches a string for a partial match regardless of case.',
-                converter: searchString,
+                testFunction: searchString,
+                title: 'searchString',
                 from: 'string',
                 to: 'boolean',
-                defaultValue: "fox", // The term users might search for in the string
-                data: "The quick brown fox jumps over the lazy dog."
+                defaultValue: 'fox', // The term users might search for in the string
+                data: 'The quick brown fox jumps over the lazy dog.'
             },
             {
                 type: 'filter',
                 readOnly: false,
-                title: 'Filter Array by String (Retain Original Format)',
-                description: 'Filters an array of transformed objects, returning only those that match the search term, in their original format.',
-                converter: filterArrayByString,
+                description:
+                    'Filters an array of transformed objects, returning only those that match the search term, in their original format.',
+                testFunction: filterArrayByString,
+                title: 'filterArrayByString',
                 from: 'arrayOfTransformedObjects',
                 to: 'arrayOfObjects',
-                defaultValue: "Developer", // Search term used for filtering the array
+                defaultValue: 'Developer', // Search term used for filtering the array
                 data: [
-                    { original: { name: "Dave", age: 42 }, objectString: "Dave, 42" },
-                    { original: { name: "Jane", occupation: "Developer", experience: "5 years" }, objectString: "Jane, Developer, 5 years" }
+                    { original: { name: 'Dave', age: 42 }, objectString: 'Dave, 42' },
+                    {
+                        original: { name: 'Jane', occupation: 'Developer', experience: '5 years' },
+                        objectString: 'Jane, Developer, 5 years'
+                    }
                 ]
             },
             {
                 type: 'filter',
                 readOnly: false,
-                title: 'Filter Array by String (Retain Transformed Format)',
-                description: 'Filters an array of transformed objects based on a search term, retaining the transformed format.',
-                converter: filterArrayByStringRaw,
+                description:
+                    'Filters an array of transformed objects based on a search term, retaining the transformed format.',
+                testFunction: filterArrayByStringRaw,
+                title: 'filterArrayByStringRaw',
                 from: 'arrayOfTransformedObjects',
                 to: 'arrayOfTransformedObjects',
-                defaultValue: "Developer", // Search term used for filtering the array
+                defaultValue: 'Developer', // Search term used for filtering the array
                 data: [
-                    { original: { name: "Dave", age: 42 }, objectString: "Dave, 42" },
-                    { original: { name: "Jane", occupation: "Developer", experience: "5 years" }, objectString: "Jane, Developer, 5 years" }
+                    { original: { name: 'Dave', age: 42 }, objectString: 'Dave, 42' },
+                    {
+                        original: { name: 'Jane', occupation: 'Developer', experience: '5 years' },
+                        objectString: 'Jane, Developer, 5 years'
+                    }
                 ]
             }
-
-
         ]
     },
-
 
     {
         title: 'Misc',
@@ -694,13 +788,13 @@ export default [
                 type: 'check',
                 readOnly: false,
                 title: 'checkType',
-                converter: checkType,
+                description: 'Checks if a value is of a specific type.',
+                testFunction: checkType,
                 from: 'any',
                 to: 'string',
-                value1: "Hello",
+                value1: 'Hello',
                 value2: 'string'
             }
         ]
     }
-
 ];
