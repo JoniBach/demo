@@ -3,7 +3,6 @@
 	import { page } from '$app/stores';
 	import Headder from '$lib/components/page/Headder.svelte';
 	import projects from '$lib/config/projects';
-	import { objectToJsonString, extractFunctionInfo } from '@jonibach/convert';
 	import ToolInfo from '$lib/components/ToolInfo.svelte';
 
 	$: project = $page.params.project;
@@ -18,7 +17,7 @@
 		{#if group.items}
 			{#each group.items as item}
 				<Headder title={item.title} level={3} />
-				<Content>
+				<Content id={item.title}>
 					<ToolInfo {data} {item} />
 				</Content>
 			{/each}

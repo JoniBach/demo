@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { navigateToElement } from '$lib/utils/scroll';
 	import Headder from './Headder.svelte';
 
 	export let data: any[] = [];
@@ -11,7 +12,7 @@
 			<p>
 				{#if item.items}
 					{#each item.items as subitem}
-						<p class="subtitle">
+						<p on:click={navigateToElement(subitem.title)} class="subtitle">
 							{subitem.title}
 						</p>
 					{/each}

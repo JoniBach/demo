@@ -1,4 +1,8 @@
-<div class="content-container">
+<script lang="ts">
+	export let id: string;
+</script>
+
+<div id="{id}-content" class="content-container">
 	<slot />
 </div>
 
