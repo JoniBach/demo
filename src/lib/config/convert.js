@@ -576,7 +576,7 @@ export default [
 
 
     {
-        title: 'Format Conversions & Compression',
+        title: 'Format',
         items: [
             {
                 readOnly: true,
