@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { checkCondition, operationList } from '@jonibach/transform';
-	import ArrowIcon from '../icons/ArrowIcon.svelte';
 	export let query;
 	export let options;
 </script>

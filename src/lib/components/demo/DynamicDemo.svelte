@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import QyeryArray from './QyeryArray.svelte';
-	import { checkCondition, operationList } from '@jonibach/transform';
+	import { operationList } from '@jonibach/check';
 
 	export let item;
 	let loading: true;
