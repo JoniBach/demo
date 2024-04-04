@@ -1,5 +1,6 @@
 import check from './check';
 import convert from './convert';
+import template from './template';
 import transform from './transform';
 
 export default [
@@ -20,5 +21,11 @@ export default [
 		id: 'check',
 		importFrom: '@jonibach/check',
 		items: check
+	},
+	{
+		title: 'Template',
+		id: 'template',
+		importFrom: '@jonibach/template',
+		items: template
 	}
 ];

@@ -36,3 +36,14 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Todo
+
+- data test id propagation helpers
+- working with accessors
+- remapping arrays of objects of data to follow new strucutres
+- paginatino 
+- building layouts
+- headless components
+- headless support for celan component driven architecture
+- data validation library

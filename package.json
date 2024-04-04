@@ -34,6 +34,7 @@
 	"dependencies": {
 		"@jonibach/check": "^1.0.0",
 		"@jonibach/convert": "^1.2.1",
+		"@jonibach/template": "^0.0.1",
 		"@jonibach/transform": "^1.0.1",
 		"@sveltejs/adapter-static": "^3.0.1",
 		"gh-pages": "^6.1.1"
