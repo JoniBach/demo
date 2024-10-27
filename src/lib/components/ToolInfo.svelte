@@ -10,8 +10,6 @@
 	$: {
 		contentInfo = extractFunctionInfo(item.testFunction);
 	}
-
-	// $: console.log(contentInfo);
 	onMount(() => {
 		// Initialize Prism.js for code highlighting
 		// @ts-ignore
@@ -23,11 +21,12 @@
 	<p class="description">{item.description}</p>
 	<div class="code">
 		<p>
-			<code class="language-javascript"
-				>{`import { ${contentInfo.name} } from '${data.importFrom}'`}</code
+			<code class="language-javascript">{`import { ${item.title} } from '${data.importFrom}'`}</code
 			>
 		</p>
-		<p><code class="language-javascript">{`const result = ${contentInfo.usage}`}</code></p>
+		<p>
+			<code class="language-javascript">{`const result = ${item.title}(${item.params})`}</code>
+		</p>
 	</div>
 	<div class="params">
 		<p class="param-title">params:</p>
