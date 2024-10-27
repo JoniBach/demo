@@ -10,6 +10,8 @@
 	$: {
 		contentInfo = extractFunctionInfo(item.testFunction);
 	}
+
+	$: console.log(contentInfo);
 	onMount(() => {
 		// Initialize Prism.js for code highlighting
 		// @ts-ignore
