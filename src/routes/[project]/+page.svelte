@@ -12,6 +12,8 @@
 
 	$: data = projects?.filter((p) => p.id === project)[0];
 	$: items = data?.items;
+
+	$: console.log('demo', items);
 </script>
 
 {#if items}

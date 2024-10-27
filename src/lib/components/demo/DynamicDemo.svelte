@@ -43,7 +43,7 @@
 
 	onMount(() => {
 		testFunction = item?.testFunction;
-		console.log(item);
+		// console.log(item);
 		loading = false;
 	});
 
