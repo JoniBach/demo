@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Icon from "@iconify/svelte";
+	import Icon from '@iconify/svelte';
 	const projects = [
 		{
 			id: 'vectori',
@@ -14,11 +14,19 @@
 			id: 'consist',
 			title: 'consist',
 			description: 'An npm library for organising conditional logic',
-            icons: [
+			icons: [
 				{ name: 'npm', link: 'https://www.npmjs.com/package/consist' },
 				{ name: 'github', link: 'https://github.com/JoniBach/consist' }
 			]
-
+		},
+		{
+			id: 'facely',
+			title: 'facely',
+			description: 'An npm library for creating 3d face meshes from 2d images',
+			icons: [
+				{ name: 'npm', link: 'https://www.npmjs.com/package/facely' },
+				{ name: 'github', link: 'https://github.com/JoniBach/facely' }
+			]
 		}
 	];
 </script>
@@ -33,20 +41,20 @@
 	<div class="content">
 		{#each projects as group}
 			<div class="content-card">
-				<div >
-					<h1 class="title">{group.title}
+				<div>
+					<h1 class="title">
+						{group.title}
 
-                        <div class="icons">
-                            {#if group.icons}
-                            {#each group.icons as icon}
-                           <a href="{icon.link}" target="_blank">
-                            <Icon icon="mdi:{icon.name}" />
-                           </a>
-                        {/each}
-                           {/if}
-                           </div>
-                    </h1>
-					
+						<div class="icons">
+							{#if group.icons}
+								{#each group.icons as icon}
+									<a href={icon.link} target="_blank">
+										<Icon icon="mdi:{icon.name}" />
+									</a>
+								{/each}
+							{/if}
+						</div>
+					</h1>
 				</div>
 				<p class="description">{group.description}</p>
 			</div>
@@ -101,13 +109,13 @@
 		border-radius: 5px;
 		margin-bottom: 1rem;
 	}
-    .title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .icons {
-        display: flex;
-        gap: 5px;
-    }
+	.title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.icons {
+		display: flex;
+		gap: 5px;
+	}
 </style>
