@@ -1,9 +1,11 @@
 <script lang="ts">
+	import Page from '$lib/components2/Page.svelte';
 	import Icon from '@iconify/svelte';
 	const projects = [
 		{
 			id: 'vectori',
 			title: 'vectori',
+			demo: '/vectori',
 			description: 'An npm library for converting images to true svgs',
 			icons: [
 				{ name: 'npm', link: 'https://www.npmjs.com/package/vectori' },
@@ -13,6 +15,7 @@
 		{
 			id: 'consist',
 			title: 'consist',
+			demo: '/consist',
 			description: 'An npm library for organising conditional logic',
 			icons: [
 				{ name: 'npm', link: 'https://www.npmjs.com/package/consist' },
@@ -22,6 +25,7 @@
 		{
 			id: 'facely',
 			title: 'facely',
+			demo: '/facely',
 			description: 'An npm library for creating 3d face meshes from 2d images',
 			icons: [
 				{ name: 'npm', link: 'https://www.npmjs.com/package/facely' },
@@ -31,78 +35,30 @@
 	];
 </script>
 
-<div class="container">
-	<div class="headder">
-		<div class="headder-content">
-			<h1 class="title">jonibach</h1>
-			<p class="description">creative tech type</p>
-		</div>
-	</div>
-	<div class="content">
-		{#each projects as group}
-			<div class="content-card">
-				<div>
-					<h1 class="title">
-						{group.title}
+<Page title="jonibach" description="creative tech type">
+	{#each projects as group}
+		<div class="content-card" on:click={() => (window.location.href = group.demo)}>
+			<div>
+				<h1 class="title">
+					{group.title}
 
-						<div class="icons">
-							{#if group.icons}
-								{#each group.icons as icon}
-									<a href={icon.link} target="_blank">
-										<Icon icon="mdi:{icon.name}" />
-									</a>
-								{/each}
-							{/if}
-						</div>
-					</h1>
-				</div>
-				<p class="description">{group.description}</p>
+					<div class="icons">
+						{#if group.icons}
+							{#each group.icons as icon}
+								<a href={icon.link} target="_blank">
+									<Icon icon="mdi:{icon.name}" />
+								</a>
+							{/each}
+						{/if}
+					</div>
+				</h1>
 			</div>
-		{/each}
-	</div>
-</div>
+			<p class="description">{group.description}</p>
+		</div>
+	{/each}
+</Page>
 
 <style>
-	.container {
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-		overflow: scroll;
-		background: #333;
-	}
-	.headder {
-		padding: 1rem;
-		background: #222;
-		min-height: 50%;
-	}
-
-	.headder-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		position: sticky;
-		top: 25%;
-		transform: translate(0, -50%);
-		z-index: 1;
-		background: #222;
-	}
-
-	.headder-content h1 {
-		font-size: 4rem;
-		margin: 0;
-	}
-	.headder-content p {
-		font-size: 2rem;
-		margin: 0;
-	}
-
-	.content {
-		flex: 1;
-		overflow-y: scroll;
-		padding: 1rem;
-	}
-
 	.content-card {
 		background: #222;
 		padding: 1px 20px;
