@@ -13,6 +13,7 @@
 		"deploy": "gh-pages -d build -t true"
 	},
 	"devDependencies": {
+		"@iconify/svelte": "^4.2.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -37,6 +38,7 @@
 		"@jonibach/template": "^0.0.1",
 		"@jonibach/transform": "^1.0.1",
 		"@sveltejs/adapter-static": "^3.0.1",
-		"gh-pages": "^6.1.1"
+		"gh-pages": "^6.1.1",
+		"vectori": "^0.0.13"
 	}
 }

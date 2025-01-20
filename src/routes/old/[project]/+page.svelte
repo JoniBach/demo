@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Content from './../../lib/components/page/Content.svelte';
+	import Content from '../../../lib/components/page/Content.svelte';
 	import { page } from '$app/stores';
 	import Headder from '$lib/components/page/Headder.svelte';
 	import projects from '$lib/config/projects';

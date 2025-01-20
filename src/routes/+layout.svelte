@@ -1,10 +1,10 @@
 <slot />
 
 <style>
-	:global(body) {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		font-family: 'Roboto', sans-serif;
-	}
+        :global(body) {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        box-sizing: border-box;
+        color: white
+    }
 </style>
