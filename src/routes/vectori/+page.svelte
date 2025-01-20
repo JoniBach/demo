@@ -15,7 +15,6 @@
 		]
 	};
 	let loading = true;
-	let fileInput;
 
 	let result = null;
 	let file;
@@ -25,25 +24,17 @@
 		return vector;
 	};
 	onMount(async () => {
-		try {
-			file = await fetch('/images/earth.png').then((res) => res.blob());
-			console.log('File loaded:', file);
-
-			setTimeout(async () => {
-				result = await processFile(file);
-				console.log('Processing done:', result);
-				loading = false;
-			}, 100); // Introduce a small delay to allow UI interaction
-		} catch (error) {
-			console.error('Error loading file:', error);
-			loading = false;
-		}
+		file = await fetch('/images/earth.png').then((res) => res.blob());
+		console.log(file);
+		const processed = await processFile(file);
+		result = processed;
+		console.log(processed);
+		loading = false;
 	});
 
-	const fileUploadClick = (event) => {
-		event.stopPropagation();
-		fileInput.click();
-	};
+	function resetFileInput(event) {
+		event.target.value = null;
+	}
 </script>
 
 <Page title={data.title} description={data.description} icons={data.icons}>
@@ -74,20 +65,18 @@ async function processFile(image) {
 		<img class="example-image" src="/images/earth.png" alt="earth" />
 		<div>
 			<input
-				bind:this={fileInput}
 				type="file"
 				accept="image/*"
-				style="display: none;"
 				on:change={async (event) => {
-					loading = true;
-					const uploadedFile = event.target.files[0];
-					const processed = await processFile(uploadedFile);
-					result = processed;
-					loading = false;
+					const file = event.target.files[0];
+					if (file) {
+						loading = true;
+						result = await processFile(file);
+						loading = false;
+						resetFileInput(event);
+					}
 				}}
 			/>
-
-			<button on:click={() => fileInput.click()}>Upload File</button>
 		</div>
 	</div>
 	<div class="section">
@@ -231,6 +220,7 @@ const greyscaleImage = vector.image({ fill: 'greyscale' }),
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		overflow: hidden;
 	}
 	.popular-color {
 		width: 1rem;
