@@ -13,16 +13,6 @@
 			]
 		},
 		{
-			id: 'consist',
-			title: 'consist',
-			demo: '/consist',
-			description: 'An npm library for organising conditional logic',
-			icons: [
-				{ name: 'npm', link: 'https://www.npmjs.com/package/consist' },
-				{ name: 'github', link: 'https://github.com/JoniBach/consist' }
-			]
-		},
-		{
 			id: 'facely',
 			title: 'facely',
 			demo: '/facely',
@@ -31,13 +21,33 @@
 				{ name: 'npm', link: 'https://www.npmjs.com/package/facely' },
 				{ name: 'github', link: 'https://github.com/JoniBach/facely' }
 			]
+		},
+		{
+			id: 'svelte-components',
+			title: 'konui-svelte',
+			demo: 'https://svelte-components-tawny.vercel.app/',
+			description: 'A collection of reusable Svelte components',
+			icons: [
+				{ name: 'npm', link: 'https://www.npmjs.com/package/konui-svelte' },
+				{ name: 'github', link: 'https://github.com/JoniBach/svelte-components/tree/main' }
+			]
+		},
+		{
+			id: 'consist',
+			title: 'consist',
+			demo: '/consist',
+			description: 'An npm library for organising conditional logic',
+			icons: [
+				{ name: 'npm', link: 'https://www.npmjs.com/package/consist' },
+				{ name: 'github', link: 'https://github.com/JoniBach/consist' }
+			]
 		}
 	];
 </script>
 
 <Page title="jonibach" description="creative tech type">
 	{#each projects as group}
-		<div class="content-card" on:click={() => (window.location.href = group.demo)}>
+		<div class="content-card" on:click|stopPropagation={() => (window.location.href = group.demo)}>
 			<div>
 				<h1 class="title">
 					{group.title}
@@ -45,7 +55,7 @@
 					<div class="icons">
 						{#if group.icons}
 							{#each group.icons as icon}
-								<a href={icon.link} target="_blank">
+								<a on:click|stopPropagation href={icon.link} target="_blank">
 									<Icon icon="mdi:{icon.name}" />
 								</a>
 							{/each}
