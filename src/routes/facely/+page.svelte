@@ -3,6 +3,7 @@
 	import Page from '$lib/components2/Page.svelte';
 	import { facely } from 'facely';
 	import { onMount } from 'svelte';
+	export let ssr = false;
 
 	const data = {
 		id: 'facely',
