@@ -24,7 +24,7 @@
 		},
 		{
 			id: 'svelte-components',
-			title: 'konui-svelte',
+			title: 'konui',
 			demo: 'https://svelte-components-tawny.vercel.app/',
 			description: 'A collection of reusable Svelte components',
 			icons: [
