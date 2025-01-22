@@ -3,6 +3,17 @@
 	import Icon from '@iconify/svelte';
 	const projects = [
 		{
+			id: 'svector',
+			title: 'svector',
+			demo: '/svector',
+			description:
+				'An npm library for creating 3d face meshes from 2d images powered by tensorflow and three',
+			icons: [
+				{ name: 'npm', link: 'https://www.npmjs.com/package/svector' },
+				{ name: 'github', link: 'https://github.com/JoniBach/svector' }
+			]
+		},
+		{
 			id: 'vectori',
 			title: 'vectori',
 			demo: '/vectori',

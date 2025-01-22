@@ -42,6 +42,7 @@
 		"facely": "^0.0.10",
 		"gh-pages": "^6.1.1",
 		"potrace": "^2.1.8",
+		"svector": "^0.0.4",
 		"svelte-highlight": "^7.8.2",
 		"vectori": "^0.0.13"
 	}
