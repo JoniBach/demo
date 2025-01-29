@@ -101,6 +101,7 @@
 
 		// Temporarily lock zoom before model loads
 		controls.enableZoom = false;
+		controls.enableRotate = false;
 		controls.minDistance = 10;
 		controls.maxDistance = 999; // large, but won't matter until zoom is re-enabled
 		controls.update();
@@ -438,7 +439,6 @@
 			cameraAnimating = false;
 
 			// Re-enable zoom and set the normal max distance
-			controls.enableZoom = true;
 			controls.minDistance = 10;
 			controls.maxDistance = 50;
 
@@ -452,6 +452,9 @@
 			controls.update();
 
 			// Initialize the helper text (fade in)
+			controls.enableZoom = true;
+			controls.enableRotate = true;
+
 			initOverlayText();
 		}
 	}
