@@ -19,19 +19,24 @@
 	let hoveredObject = null;
 	let hasMoved = false;
 
-	// Overlay text reference
-	let overlay;
-	// Track if user has interacted and overlay fade-out has been triggered
-	let userHasInteracted = false;
+	let userHasInteracted = false; // for helper text fade-out
+	let overlay; // helper text reference
+	let loadingOverlay; // "Loading..." overlay reference
+	let modelLoaded = false; // track GLTF loading status
+
+	// Camera animation states
+	let cameraAnimating = false;
+	let targetCameraZ = 50; // the normal "close up" position
+	let animationSpeed = 0.03; // tweak for faster/slower zoom-in animation
 
 	/*-----------------------------------------------------
 	 * Scene, Camera, Renderer, and Composer Setup
 	 *-----------------------------------------------------*/
 	function initScene() {
 		scene = new THREE.Scene();
-		// Add fog to fade the floor into the distance
+		// Add fog to fade floor into the distance
 		scene.fog = new THREE.Fog(0x0a0a2a, 10, 100);
-		scene.background = new THREE.Color(0x0a0a2a); // Scene background color
+		scene.background = new THREE.Color(0x0a0a2a);
 	}
 
 	function initCamera() {
@@ -41,7 +46,9 @@
 			0.1,
 			1000
 		);
-		camera.position.set(0, 0, 50);
+
+		// Start the camera far back so model is hidden by fog
+		camera.position.set(0, 0, 300);
 	}
 
 	function initRenderer() {
@@ -55,7 +62,6 @@
 		const renderPass = new RenderPass(scene, camera);
 		composer.addPass(renderPass);
 
-		// Bloom pass for glow effects
 		const bloomPass = new UnrealBloomPass(
 			new THREE.Vector2(window.innerWidth, window.innerHeight),
 			0.2, // strength
@@ -69,7 +75,7 @@
 	 * Floor & Basic Geometry
 	 *-----------------------------------------------------*/
 	function addFloor() {
-		const floorGeometry = new THREE.CircleGeometry(150, 64);
+		const floorGeometry = new THREE.CircleGeometry(300, 64);
 		const floorMaterial = new THREE.MeshStandardMaterial({
 			color: 0x222222,
 			roughness: 1
@@ -77,7 +83,7 @@
 		const floor = new THREE.Mesh(floorGeometry, floorMaterial);
 		floor.rotation.x = -Math.PI / 2;
 		floor.position.y = -10;
-		floor.material.color.set(0x666666); // match floor color
+		floor.material.color.set(0x666666);
 		scene.add(floor);
 	}
 
@@ -88,20 +94,45 @@
 		controls = new OrbitControls(camera, renderer.domElement);
 		controls.enableDamping = true;
 		controls.dampingFactor = 0.1;
-		controls.minPolarAngle = Math.PI / 4; // Prevent going below the ground
-		controls.maxPolarAngle = Math.PI / 2; // Prevent flipping the view
-		controls.enablePan = false; // Disable panning
+		controls.minPolarAngle = Math.PI / 4;
+		controls.maxPolarAngle = Math.PI / 2;
+		controls.enablePan = false;
 		controls.screenSpacePanning = false;
-		controls.minAzimuthAngle = 0;
-		controls.maxAzimuthAngle = Math.PI / 2;
+
+		// Temporarily lock zoom before model loads
+		controls.enableZoom = false;
 		controls.minDistance = 10;
-		controls.maxDistance = 50;
+		controls.maxDistance = 999; // large, but won't matter until zoom is re-enabled
 		controls.update();
 	}
 
 	/*-----------------------------------------------------
-	 * Overlay Text
+	 * Overlay Text & Loading Screen
 	 *-----------------------------------------------------*/
+	function initLoadingOverlay() {
+		loadingOverlay = document.createElement('div');
+		loadingOverlay.id = 'loading_overlay';
+		loadingOverlay.style.position = 'absolute';
+		loadingOverlay.style.top = '10%';
+		loadingOverlay.style.left = '50%';
+		loadingOverlay.style.transform = 'translate(-50%, -50%)';
+		loadingOverlay.style.color = 'white';
+		loadingOverlay.style.fontSize = '24px';
+		loadingOverlay.style.fontFamily = 'Courier New, monospace';
+		loadingOverlay.style.zIndex = '2000';
+		loadingOverlay.style.textAlign = 'center';
+		loadingOverlay.innerText = 'Loading...';
+
+		document.body.appendChild(loadingOverlay);
+	}
+
+	function removeLoadingOverlay() {
+		if (loadingOverlay && loadingOverlay.parentNode) {
+			loadingOverlay.parentNode.removeChild(loadingOverlay);
+			loadingOverlay = null;
+		}
+	}
+
 	function initOverlayText() {
 		overlay = document.createElement('div');
 		overlay.id = 'helper_text';
@@ -120,7 +151,7 @@
 
 		document.body.appendChild(overlay);
 
-		// Fade in
+		// Fade in once appended (next frame)
 		requestAnimationFrame(() => {
 			overlay.style.opacity = '1';
 		});
@@ -145,7 +176,6 @@
 	 * Event Listeners & Raycasting
 	 *-----------------------------------------------------*/
 	function handleMouseEnter(event) {
-		// handleFirstInteraction(); // triggers overlay fade-out if first time
 		mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
 		mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 		raycaster.setFromCamera(mouse, camera);
@@ -155,18 +185,18 @@
 		}
 	}
 
-	function handleScroll(event) {
-		handleFirstInteraction(); // triggers overlay fade-out if first time
+	function handleScroll() {
+		// If user can scroll, they've interacted
+		handleFirstInteraction();
 	}
 
 	function handleMouseMove() {
-		// handleFirstInteraction(); // triggers overlay fade-out if first time
 		hasMoved = true;
 		hoveredObject = null;
 	}
 
 	function handleMouseDown(event) {
-		handleFirstInteraction(); // triggers overlay fade-out if first time
+		handleFirstInteraction();
 		hasMoved = false;
 		mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
 		mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -178,9 +208,9 @@
 	}
 
 	function handleMouseUp(event) {
-		handleFirstInteraction(); // triggers overlay fade-out if first time
-		if (!clickedObject) return;
+		handleFirstInteraction();
 
+		if (!clickedObject) return;
 		mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
 		mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 		raycaster.setFromCamera(mouse, camera);
@@ -204,13 +234,18 @@
 		}
 	}
 
+	function handleTouchStart(event) {
+		handleFirstInteraction();
+	}
+
 	function addEventListeners() {
 		window.addEventListener('mouseenter', handleMouseEnter);
 		window.addEventListener('mousemove', handleMouseMove);
 		window.addEventListener('mousedown', handleMouseDown);
 		window.addEventListener('mouseup', handleMouseUp);
-
+		window.addEventListener('wheel', handleScroll, { passive: true });
 		window.addEventListener('resize', onWindowResize);
+		window.addEventListener('touchstart', handleTouchStart);
 	}
 
 	function removeEventListeners() {
@@ -218,7 +253,9 @@
 		window.removeEventListener('mousemove', handleMouseMove);
 		window.removeEventListener('mousedown', handleMouseDown);
 		window.removeEventListener('mouseup', handleMouseUp);
+		window.removeEventListener('wheel', handleScroll);
 		window.removeEventListener('resize', onWindowResize);
+		window.removeEventListener('touchstart', handleTouchStart);
 	}
 
 	/*-----------------------------------------------------
@@ -239,10 +276,11 @@
 		loader.load(
 			'/DIORAMA 3.2.gltf',
 			(gltf) => {
-				gltf.scene.position.set(0, -8, 0);
+				// Model loaded
 				scene.add(gltf.scene);
+				gltf.scene.position.set(0, -8, 0);
 
-				// Traverse and store references
+				// Collect references
 				const materials = [];
 				const nodes = [];
 				gltf.scene.traverse((child) => {
@@ -258,14 +296,17 @@
 					nodes.push(child);
 				});
 
-				// Setup sign interaction
 				setupSigns(nodes);
-
-				// Lighting & Glow
 				addSpotLight(scene);
 				addNeonGlow(nodes, scene);
 				addLanternLights(nodes, scene);
 				addStreetLights(nodes, scene);
+
+				// Hide loading overlay & animate camera inward
+				removeLoadingOverlay();
+				startCameraAnimation();
+
+				modelLoaded = true;
 			},
 			undefined,
 			(error) => {
@@ -281,7 +322,7 @@
 		const signNodes = nodes.filter((node) => node.name && node.name.startsWith('sign_'));
 		signNodes.forEach((group) => {
 			group.children.forEach((child) => {
-				child.userData.groupName = group.name; // Store the sign group name in userData
+				child.userData.groupName = group.name; // Store sign group name
 			});
 		});
 	}
@@ -364,8 +405,7 @@
 			const streetLight = new THREE.PointLight(0xffffff, 10, 30);
 			const worldPosition = new THREE.Vector3();
 			node.getWorldPosition(worldPosition);
-
-			// Adjust position slightly
+			// Adjust position
 			worldPosition.y -= 2;
 			worldPosition.x -= 2;
 			worldPosition.z -= 2;
@@ -376,10 +416,57 @@
 	}
 
 	/*-----------------------------------------------------
+	 * Camera Animation (zoom in from fog to start dist)
+	 *-----------------------------------------------------*/
+	function startCameraAnimation() {
+		cameraAnimating = true;
+	}
+
+	function animateCameraToTarget() {
+		// Calculate the current position and the difference to the target
+		const currentZ = camera.position.z;
+		const delta = targetCameraZ - currentZ;
+		const step = delta * animationSpeed;
+
+		// Move the camera closer each frame
+		camera.position.z = currentZ + step;
+
+		// Check if the camera is close enough to the target position
+		if (Math.abs(delta) < 0.1) {
+			// Snap the camera to the exact target position
+			camera.position.z = targetCameraZ;
+			cameraAnimating = false;
+
+			// Re-enable zoom and set the normal max distance
+			controls.enableZoom = true;
+			controls.minDistance = 10;
+			controls.maxDistance = 50;
+
+			// **Reinstate Rotation Locks**
+			controls.minPolarAngle = Math.PI / 4; // Prevent camera from going below ground
+			controls.maxPolarAngle = Math.PI / 2; // Prevent camera from flipping view
+			controls.minAzimuthAngle = 0; // Restrict horizontal rotation to -90 degrees
+			controls.maxAzimuthAngle = Math.PI / 2; // Restrict horizontal rotation to 90 degrees
+
+			// Update the controls to apply the new settings
+			controls.update();
+
+			// Initialize the helper text (fade in)
+			initOverlayText();
+		}
+	}
+
+	/*-----------------------------------------------------
 	 * Main Animate Loop
 	 *-----------------------------------------------------*/
 	function animate() {
 		requestAnimationFrame(animate);
+
+		// If camera is animating, adjust it each frame
+		if (cameraAnimating) {
+			animateCameraToTarget();
+		}
+
 		controls.update();
 		composer.render();
 	}
@@ -393,7 +480,10 @@
 		initRenderer();
 		initComposer();
 		initControls();
-		initOverlayText();
+
+		// Show loading screen
+		initLoadingOverlay();
+
 		addFloor();
 		addEventListeners();
 		loadModel();
